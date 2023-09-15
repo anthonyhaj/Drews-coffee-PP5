@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-anthonyhaj-drewscoffeep-l527csiiolf.ws-eu104.gitpod.io', 
+ALLOWED_HOSTS = ['8000-anthonyhaj-drewscoffeep-ho05p5bmsk5.ws-eu104.gitpod.io',
                  'drews-coffee-pp5-3d45d25f45a2.herokuapp.com', 'localhost']
 
 
@@ -72,7 +72,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth', 
+                'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -160,7 +160,7 @@ STATIC_URL = '/static/'
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
