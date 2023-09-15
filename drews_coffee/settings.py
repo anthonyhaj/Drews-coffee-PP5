@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-anthonyhaj-drewscoffeep-l527csiiolf.ws-eu104.gitpod.io', 
-                 'https://drews-coffee-pp5-3d45d25f45a2.herokuapp.com/', 'localhost']
+                 'drews-coffee-pp5-3d45d25f45a2.herokuapp.com', 'localhost']
 
 
 # Application definition
