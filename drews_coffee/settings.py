@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = ['8000-anthonyhaj-drewscoffeep-l527csiiolf.ws-eu104.gitpod.io', 
-                 'drews-coffee-pp5.heroku.com', 'localhost']
+                 'https://drews-coffee-pp5-3d45d25f45a2.herokuapp.com/', 'localhost']
 
 
 # Application definition
@@ -62,7 +62,10 @@ ROOT_URLCONF = 'drews_coffee.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
