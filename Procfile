@@ -1,1 +1,1 @@
-web: gunicorn drews-coffee-PP5.wsgi:application
+web: gunicorn drews_coffee.wsgi:application
