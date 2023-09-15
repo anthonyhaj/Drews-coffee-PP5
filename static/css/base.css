@@ -1,4 +1,4 @@
-/* main styles */
+/* Main Styles */
 
 * {
     color: #fafafa;
@@ -8,3 +8,27 @@ i {
     color: black;
 }
 
+/*  Hero Carousel */
+.hero-carousel {
+    height: 400px; 
+}
+
+.hero-carousel .carousel-inner {
+    height: 100%;
+}
+
+.align-center {
+    /* Align the image to the center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.align-bottom {
+    /* Align the image to the bottom */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+}
