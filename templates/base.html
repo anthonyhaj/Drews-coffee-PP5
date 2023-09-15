@@ -32,41 +32,35 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     {% endblock %}
 </head>
-
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg custom-bg-color">
-        <div class="container-fluid">
-            <!-- Logo -->
-            <a class="navbar-brand mx-auto d-lg-none d-xl-none" href="{% url 'home' %}">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'img/logo.png' %}" alt="Logo" style="width:100px;">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <!-- Logo for large and xtra large devices -->
-                <a class="navbar-brand d-none d-lg-block d-xl-block mr-auto" href="{% url 'home' %}">
-                    <img src="{% static 'img/logo.png' %}" alt="Logo" style="width:80px;">
-                </a>
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link text-white" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{% url 'products' %}">Coffee</a>
+                        <a class="nav-link" href="{% url 'products' %}">Coffee</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{% url 'blog' %}">Book a Table</a>
+                        <a class="nav-link" href="{% url 'blog' %}">Book a Table</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="{% url 'contact' %}">Contact Us</a>
+                        <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    
     <!-- Django messages -->
     {% if messages %}
     <div class="container mt-2">

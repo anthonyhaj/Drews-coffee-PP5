@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'storages',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -185,7 +186,7 @@ if 'USE_AWS' in os.environ:
         'CacheControl': 'max-age=86400',
     }
 
-    AWS_LOCATION = 'static' 
+    AWS_LOCATION = 'static'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
