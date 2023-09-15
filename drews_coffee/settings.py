@@ -185,3 +185,4 @@ if 'USE_AWS' in os.environ:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
