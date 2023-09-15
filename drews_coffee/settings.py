@@ -189,4 +189,3 @@ if 'USE_AWS' in os.environ:
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
