@@ -8,90 +8,58 @@ i {
     color: black;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Hero Carousel */
-
-.hero-carousel {
-    height: auto;
+.carousel-item {
+    height: 400px;
+    overflow: hidden;
 }
 
-.hero-carousel .carousel-inner {
-    height: auto;
+.carousel-item img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
 }
 
-.carousel-caption {
+.carousel-caption-wrapper {
     position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+.caption-box {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 15px;
     border-radius: 5px;
-    width: 90%;
-    max-width: 400px;
+    max-width: 80%;
+    text-align: center;
 }
 
-.carousel-caption .btn {
-    color: #fff;
-    background-color: #c7a17a;
-}
 
-.carousel-caption a.btn:hover,
-.carousel-caption a.btn:focus {
-    background-color: #7b4b27;
-}
 
-.carousel-caption a.btn:active {
-    background-color: #7b4b27;
-}
-
-/* Media Queries */
-
-@media (min-width: 800px) {
-    .carousel-caption h1 {
-        font-size: 2rem;
-    }
-
-    .carousel-caption p {
-        font-size: 1.2rem;
-    }
-
-    .carousel-caption .btn {
-        font-size: 1.2rem;
-        padding: 5px 15px;
+/* Media queries for large devices */
+@media (min-width: 992px) {
+    .caption-box {
+        max-width: 50%;
+        margin: auto; 
     }
 }
 
-@media (min-width: 481px) and (max-width: 800px) {
-    .carousel-caption {
-        max-height: 250px;
-    }
-
-    .carousel-caption h1 {
-        font-size: 1.5rem;
-    }
-
-    .carousel-caption p {
-        font-size: 1.2rem;
-    }
-
-    .carousel-caption .btn {
-        font-size: 1.2rem;
-        padding: 5px 15px;
-    }
+.btn-primary {
+    background-color: #c7a17a !important;
+    border-color: #c7a17a !important;
+    color: #ffffff !important;
 }
 
-@media (max-width: 480px) {
-    .carousel-caption h1 {
-        font-size: 0.8rem;
-    }
-
-    .carousel-caption p {
-        font-size: 0.6rem;
-    }
-
-    .carousel-caption .btn {
-        font-size: 0.6rem;
-        padding: 4px 10px;
-    }
+.btn-primary:hover {
+    background-color: #7b4b27 !important;
+    border-color: #7b4b27 !important;
+    color: #ffffff !important;
 }
