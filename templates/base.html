@@ -32,6 +32,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     {% endblock %}
 </head>
+
 <body>
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-md navbar-light bg-light">
@@ -47,9 +48,13 @@
 
             <!-- Search bar for medium and large devices -->
             <form class="form-inline ml-auto d-none d-lg-block">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control custom-search custom-search-md mr-sm-2" type="search" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn btn-outline-primary custom-button custom-button-md my-2 my-sm-0" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
             </form>
+
 
             <!-- Shopping bag icon for medium and large devices -->
             <div class="navbar-icon-link ml-3 d-none d-md-block">
@@ -88,10 +93,14 @@
                         </a>
                     </li>
                     <!-- Search bar for small devices in hamburger menu -->
+                    <!-- Search bar for small devices in hamburger menu -->
                     <li class="nav-item d-lg-none">
                         <form class="form-inline ml-auto">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                            <input class="form-control custom-search mr-sm-2" type="search" placeholder="Search"
+                                aria-label="Search">
+                            <button class="btn btn-outline-primary custom-button my-2 my-sm-0" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
                         </form>
                     </li>
                 </ul>

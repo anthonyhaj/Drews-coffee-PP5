@@ -12,6 +12,17 @@ a {
     text-decoration: none;
 }
 
+/* Navigation Bar */
+
+.custom-search {
+    width: 150px;
+    height: 30px;
+}
+.custom-button {
+    height: 30px;
+    line-height: 0.5;
+}
+
 /* Hero Carousel */
 .carousel-item {
     height: 400px;
@@ -49,6 +60,19 @@ a {
     .caption-box {
         max-width: 50%;
         margin: auto; 
+    }
+}
+
+/* Media queries for medium devices */
+@media (min-width: 768px) and (max-width: 992px) {
+    .custom-search-md {
+        width: 60px;
+        height: 25px;
+    }
+
+    .custom-button-md {
+        height: 25px;
+        line-height: 0.5;
     }
 }
 
