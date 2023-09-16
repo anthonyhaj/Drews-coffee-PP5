@@ -34,6 +34,7 @@
 </head>
 
 <body>
+    <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="{% url 'index' %}">
@@ -54,11 +55,19 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'index' %}">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Coffee</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Shop
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="shopDropdown">
+                            <a class="dropdown-item" href="">Coffee</a>
+                            <a class="dropdown-item" href="">Coffee Mugs</a>
+                            <a class="dropdown-item" href="">Accessories</a>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Book a Table</a>
+                        <a class="nav-link" href="">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Contact Us</a>
