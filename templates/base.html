@@ -35,26 +35,34 @@
 
 <body>
     <!-- Navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="{% url 'index' %}">
                 <img src="{% static 'img/logo.png' %}" alt="Logo" style="width:100px;">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            <button class="navbar-toggler d-md-none" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
 
             <!-- Search bar for medium and large devices -->
             <form class="form-inline ml-auto d-none d-lg-block">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
             </form>
+
+            <!-- Shopping bag icon for medium and large devices -->
+            <a href="" class="navbar-icon-link ml-3">
+                <i class="fas fa-shopping-bag"></i>
+            </a>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'index' %}">Home</a>
                     </li>
+                    <!-- Added Shop dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -72,9 +80,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="">Contact Us</a>
                     </li>
+                    <!-- Shopping bag icon for small devices -->
+                    <li class="nav-item d-md-none">
+                        <a class="nav-link" href="">
+                            <i class="fas fa-shopping-bag"></i>
+                        </a>
+                    </li>
                     <!-- Search bar for small devices in hamburger menu -->
                     <li class="nav-item d-lg-none">
-                        <form class="form-inline my-2 my-lg-0">
+                        <form class="form-inline ml-auto d-none d-lg-block">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
                         </form>
