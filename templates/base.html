@@ -56,16 +56,30 @@
                     </div>
                 </form>
 
-
                 <!-- Shopping bag icon for medium and large devices -->
                 <a href="" class="navbar-icon-link ml-3 d-none d-md-inline">
                     <i class="fas fa-shopping-bag"></i>
                 </a>
 
-                <!-- Profile icon for medium and large devices -->
-                <a href="" class="navbar-icon-link ml-3 d-none d-md-inline">
-                    <i class="fas fa-user"></i>
-                </a>
+                <!-- Profile Dropdown -->
+                <li class="nav-item dropdown navbar-icon-link ml-3 d-none d-md-inline">
+                    <a class="dropdown-toggle dt-c navbar-icon-link ml-3-c" id="profileDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <a class="dropdown-item" href="">Add Products</a>
+                        {% endif %}
+                        <a class="dropdown-item" href="">Profile</a>
+                        <a class="dropdown-item" href="">Logout</a>
+                        {% else %}
+                        <a class="dropdown-item" href="">Register</a>
+                        <a class="dropdown-item" href="">Login</a>
+                        {% endif %}
+                    </div>
+                </li>
 
                 <!-- Hamburger menu -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -79,16 +93,13 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
-                    <!-- Shop dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Shop
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="shopDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+                        <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
                             <a class="dropdown-item" href="">All Products</a>
                             <a class="dropdown-item" href="">Coffee</a>
-                            <a class="dropdown-item" href="">Coffee Mugs</a>
+                            <a class="dropdown-item" href="">Mugs</a>
                             <a class="dropdown-item" href="">Accessories</a>
                         </div>
                     </li>
@@ -113,12 +124,12 @@
                     </li>
 
                     <!-- Shopping bag icon for small devices -->
+                    <div></div>
                     <li class="nav-item d-md-none">
                         <a class="nav-link" href="">
                             <i class="fas fa-shopping-bag"></i>
                         </a>
                     </li>
-
                     <!-- Profile icon for small devices -->
                     <li class="nav-item d-md-none">
                         <a class="nav-link" href="">

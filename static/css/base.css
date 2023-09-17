@@ -33,6 +33,10 @@ a {
 
 /* Navigation Bar */
 
+.mg-c {
+    margin-left: 0.5rem;
+}
+
 .custom-search {
     width: 150px;
     height: 30px;
@@ -91,6 +95,13 @@ a {
     padding-bottom: 20px;
 }
 
+.dt-c {
+    color: #c7a17a !important;
+}
+
+.dropdown-toggle::after {
+    color: #c7a17a;
+}
 
 /* Media queries for large devices */
 @media (min-width: 992px) {
