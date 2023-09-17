@@ -153,7 +153,42 @@ The primary target audience for Drew's Coffee consists of coffee enthusiasts spa
 23. As a Store Owner I can delete a product so that I can delete existing products from the shop
 
 ### Kanban, Epics & User Stories
+- GitHub Kanban was used for user stories
+- Epics were created using the milestones feature
 
+<details><summary>Epic Overview</summary>
+<img src="docs/agile/epic-o.png">
+</details>
+
+<details><summary>Epic 1</summary>
+<img src="docs/agile/epic1.png">
+</details>
+
+<details><summary>Epic 2</summary>
+<img src="docs/agile/epic2.png">
+</details>
+
+<details><summary>Epic 3</summary>
+<img src="docs/agile/epic3.png">
+</details>
+
+<details><summary>Epic 4</summary>
+<img src="docs/agile/epic4.png">
+</details>
+
+<details><summary>Epic 5</summary>
+<img src="docs/agile/epic5.png">
+</details>
+
+<details><summary>Kanban</summary>
+<img src="docs/agile/kanban.png">
+</details>
+
+<details><summary>User Stories</summary>
+<img src="docs/agile/user-stories1.png">
+<img src="docs/agile/user-stories2.png">
+<img src="docs/agile/user-stories3.png">
+</details>
 
 
 
