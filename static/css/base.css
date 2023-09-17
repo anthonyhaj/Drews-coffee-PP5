@@ -5,7 +5,11 @@
 }
 
 i {
-    color: black;
+    color: black !important;
+}
+
+.i-w {
+    color: #fff !important;
 }
 
 a {
@@ -21,6 +25,15 @@ a {
 .custom-button {
     height: 30px;
     line-height: 0.5;
+    background-color: #c7a17a !important;
+    border-color: #c7a17a !important;
+    color: #ffffff !important;
+}
+
+.btn-custom:hover {
+    background-color: #7b4b27 !important;
+    border-color: #7b4b27 !important;
+    color: #ffffff !important;
 }
 
 /* Hero Carousel */
@@ -66,7 +79,7 @@ a {
 /* Media queries for medium devices */
 @media (min-width: 768px) and (max-width: 992px) {
     .custom-search-md {
-        width: 60px;
+        width: 100px;
         height: 25px;
     }
 
@@ -76,14 +89,4 @@ a {
     }
 }
 
-.btn-primary {
-    background-color: #c7a17a !important;
-    border-color: #c7a17a !important;
-    color: #ffffff !important;
-}
 
-.btn-primary:hover {
-    background-color: #7b4b27 !important;
-    border-color: #7b4b27 !important;
-    color: #ffffff !important;
-}
