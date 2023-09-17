@@ -1,4 +1,4 @@
-# eCommerce Drew's Coffee PP5
+# Drew's Coffee PP5-Ecommerce
 
 ![Am I Responsive]()
 
@@ -13,8 +13,6 @@
   - [Executive Summary](#executive-summary)
      - [Market Analysis](#market-analysis)
      - [Marketing and Sales Strategy](#marketing-and-sales-strategy)
-     - [Operations and Management](#operations-and-management)
-     - [Financial Plan](#financial-plan)
      - [Conclusion](#conclusion)
   - [Marketing](#marketing)
      - [Social Media](#social-media)
@@ -65,4 +63,20 @@ The blog section on Drew's Coffee's website will be a strategic tool for organic
 
 3. Email Marketing:
 Regular newsletters and targeted email campaigns will keep our customer base engaged and informed about new product releases, special discounts, and exclusive events. Advanced analytics will be employed to segment our audience and personalize the content for maximum impact.
+
+### Conclusion
+
+In summary, Drew's Coffee aims to be a groundbreaking venture in the coffee market by providing high-quality products complemented by a seamless online shopping experience. With a robust technological backbone powered by Django and a carefully planned marketing strategy, this platform aspires to carve a unique niche in the e-commerce world. From user-focused design to an array of features aimed at enhancing both user and owner goals, Drew's Coffee is engineered for scalability and adaptability. This README serves as a thorough documentation of the project, outlining our vision, planning, and execution strategies. We invite stakeholders, developers, and users alike to explore this document to gain a holistic understanding of Drew's Coffee and its promising future.
+
+## Marketing
+
+### Social Media
+Drew's Coffee maintains active Facebook and Instagram accounts to engage with our community and keep them updated on new products, promotions, and coffee culture. Both platforms are strategically used to boost brand awareness and drive traffic to our e-commerce site. Periodic analytics reviews guide our content and promotional strategies to continually grow and serve our community better.
+
+!!!!!!!!!!!!!!!
+
+### Mailing List
+Drew's Coffee leverages Mailchimp to manage our mailing list effectively. Subscribers receive bi-weekly newsletters containing exclusive promotions, updates on new coffee releases, and curated content related to coffee culture. This mailing list serves as a direct channel of communication to our most engaged customers, and analytics from Mailchimp assist us in optimizing the content and timing of these communications to enhance user engagement and drive sales.
+
+
 
