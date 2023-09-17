@@ -1,7 +1,11 @@
 /* Main Styles */
 
-* {
-    color: #f1f1f1;
+body {
+    color: #000;
+}
+
+h2 p {
+    color-scheme: #fff;
 }
 
 i {
@@ -83,6 +87,10 @@ a {
     line-height: 1.2;
 }
 
+.card {
+    padding-bottom: 20px;
+}
+
 
 /* Media queries for large devices */
 @media (min-width: 992px) {
@@ -110,4 +118,13 @@ a {
 }
 
 /* Media queries for small devices */
-@media (min-width: 576px) {}
+@media (min-width: 576px) and (max-width: 768px) {
+    .card {
+        max-width: 300px;
+        margin: auto;
+    }
+
+    .custom-card {
+        margin-bottom: 20px;
+    }
+}
