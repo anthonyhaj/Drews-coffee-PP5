@@ -20,6 +20,8 @@ a {
     text-decoration: none;
 }
 
+
+
 .btn-primary {
     background-color: #c7a17a !important;
     border-color: #c7a17a !important;
@@ -29,6 +31,14 @@ a {
     background-color: #7b4b27 !important;
     border-color: #7b4b27 !important;
     color: #ffffff !important;
+}
+
+.total-c {
+    font-size: 12px;
+}
+
+.pad-c {
+    padding-left: 6px;
 }
 
 /* Navigation Bar */

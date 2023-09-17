@@ -57,9 +57,18 @@
                 </form>
 
                 <!-- Shopping bag icon for medium and large devices -->
-                <a href="" class="navbar-icon-link ml-3 d-none d-md-inline">
-                    <i class="fas fa-shopping-bag"></i>
-                </a>
+                <div class="navbar-icon-link">
+                    <a href="">
+                        <i class="fas fa-shopping-bag pad-c"></i>
+                    </a>
+                    <p class="my-0 total-c">
+                        {% if grand_total %}
+                        €{{ grand_total|floatformat:2 }}
+                        {% else %}
+                        €0.00
+                        {% endif %}
+                    </p>
+                </div>
 
                 <!-- Profile Dropdown -->
                 <li class="nav-item dropdown navbar-icon-link ml-3 d-none d-md-inline">
