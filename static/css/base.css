@@ -16,12 +16,24 @@ a {
     text-decoration: none;
 }
 
+.btn-primary {
+    background-color: #c7a17a !important;
+    border-color: #c7a17a !important;
+}
+
+.btn-primary:hover {
+    background-color: #7b4b27 !important;
+    border-color: #7b4b27 !important;
+    color: #ffffff !important;
+}
+
 /* Navigation Bar */
 
 .custom-search {
     width: 150px;
     height: 30px;
 }
+
 .custom-button {
     height: 30px;
     line-height: 0.5;
@@ -66,13 +78,17 @@ a {
     text-align: center;
 }
 
+.display-c {
+    font-weight: 300;
+    line-height: 1.2;
+}
 
 
 /* Media queries for large devices */
 @media (min-width: 992px) {
     .caption-box {
         max-width: 50%;
-        margin: auto; 
+        margin: auto;
     }
 }
 
@@ -89,12 +105,9 @@ a {
     }
 
     .nav-link {
-        font-size: 14px;  
-      }
+        font-size: 14px;
+    }
 }
 
 /* Media queries for small devices */
-@media (min-width: 576px) {
-    
-}
-
+@media (min-width: 576px) {}
