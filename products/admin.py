@@ -5,6 +5,16 @@ from django.contrib import admin
 from .models import Product, Category
 
 
+class ProductImageInline(admin.TabularInline):
+    model = ProductImage
+    extra = 1
+
+
+class ProductImageAdmin(admin.ModelAdmin):
+    list_display = ('product', )
+    ordering = ('product',)
+
+
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'sku', 'price', 'category', 'rating')
     ordering = ('name',)
