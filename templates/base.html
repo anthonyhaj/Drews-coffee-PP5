@@ -41,26 +41,32 @@
             <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'img/logo.png' %}" alt="Logo" style="width:100px;">
             </a>
-            <button class="navbar-toggler ml-auto d-md-none" type="button" data-toggle="collapse"
-                data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <!-- Search bar for medium and large devices -->
-            <form class="form-inline ml-auto d-none d-lg-block">
-                <input class="form-control custom-search custom-search-md mr-sm-2" type="search" placeholder="Search"
-                    aria-label="Search">
-                <button class="btn btn-outline-primary custom-button custom-button-md my-2 my-sm-0" type="submit">
-                    <i class="fas fa-search i-w"></i>
-                </button>
-            </form>
+            <div class="d-flex align-items-center">
+                <!-- Search bar for medium and large devices -->
+                <form class="form-inline ml-auto d-none d-lg-block">
+                    <input class="form-control custom-search custom-search-md mr-sm-2" type="search"
+                        placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary custom-button custom-button-md my-2 my-sm-0" type="submit">
+                        <i class="fas fa-search i-w"></i>
+                    </button>
+                </form>
 
-
-            <!-- Shopping bag icon for medium and large devices -->
-            <div class="navbar-icon-link ml-3 d-none d-md-block">
-                <a href="">
+                <!-- Shopping bag icon for medium and large devices -->
+                <a href="" class="navbar-icon-link ml-3 d-none d-md-inline">
                     <i class="fas fa-shopping-bag"></i>
                 </a>
+
+                <!-- Profile icon for medium and large devices -->
+                <a href="" class="navbar-icon-link ml-3 d-none d-md-inline">
+                    <i class="fas fa-user"></i>
+                </a>
+
+                <!-- Hamburger menu -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
 
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -86,10 +92,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="">Contact Us</a>
                     </li>
+
                     <!-- Shopping bag icon for small devices -->
                     <li class="nav-item d-md-none">
                         <a class="nav-link" href="">
                             <i class="fas fa-shopping-bag"></i>
+                        </a>
+                    </li>
+
+                    <!-- Profile icon for small devices -->
+                    <li class="nav-item d-md-none">
+                        <a class="nav-link" href="">
+                            <i class="fas fa-user"></i>
                         </a>
                     </li>
                     <!-- Search bar for small devices in hamburger menu -->

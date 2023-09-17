@@ -87,6 +87,14 @@ a {
         height: 25px;
         line-height: 0.5;
     }
+
+    .nav-link {
+        font-size: 14px;  
+      }
 }
 
+/* Media queries for small devices */
+@media (min-width: 576px) {
+    
+}
 
