@@ -44,12 +44,15 @@
 
             <div class="d-flex align-items-center">
                 <!-- Search bar for medium and large devices -->
-                <form class="form-inline ml-auto d-none d-lg-block">
-                    <input class="form-control custom-search custom-search-md mr-sm-2" type="search"
+                <form class="form-inline ml-auto d-none d-lg-block" method="GET" action="">
+                    <input class="form-control input-proup custom-search custom-search-md mr-sm-2" type="text" name="q"
                         placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary custom-button custom-button-md my-2 my-sm-0" type="submit">
-                        <i class="fas fa-search i-w"></i>
-                    </button>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary custom-button custom-button-md my-2 my-sm-0"
+                            type="submit">
+                            <i class="fas fa-search i-w"></i>
+                        </button>
+                    </div>
                 </form>
 
                 <!-- Shopping bag icon for medium and large devices -->
@@ -81,6 +84,7 @@
                             Shop
                         </a>
                         <div class="dropdown-menu" aria-labelledby="shopDropdown">
+                            <a class="dropdown-item" href="">All Products</a>
                             <a class="dropdown-item" href="">Coffee</a>
                             <a class="dropdown-item" href="">Coffee Mugs</a>
                             <a class="dropdown-item" href="">Accessories</a>
@@ -95,12 +99,14 @@
 
                     <!-- Search bar for small devices in hamburger menu -->
                     <li class="nav-item d-lg-none">
-                        <form class="form-inline ml-auto">
+                        <form class="form-inline ml-auto" method="GET" action="">
                             <input class="form-control custom-search mr-sm-2" type="search" placeholder="Search"
-                                aria-label="Search">
-                            <button class="btn btn-outline-primary custom-button my-2 my-sm-0" type="submit">
-                                <i class="fas fa-search i-w"></i>
-                            </button>
+                                type="text" name="q" aria-label="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-primary custom-button my-2 my-sm-0" type="submit">
+                                    <i class="fas fa-search i-w"></i>
+                                </button>
+                            </div>
                         </form>
                     </li>
 
