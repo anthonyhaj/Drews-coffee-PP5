@@ -20,7 +20,9 @@ a {
     text-decoration: none;
 }
 
-
+.navbar-icon-link {
+    margin-left: 0.5rem;
+}
 
 .btn-primary {
     background-color: #c7a17a !important;

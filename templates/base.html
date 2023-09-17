@@ -57,7 +57,7 @@
                 </form>
 
                 <!-- Shopping bag icon for medium and large devices -->
-                <div class="navbar-icon-link">
+                <div class="navbar-icon-link d-md-block d-sm-none">
                     <a href="">
                         <i class="fas fa-shopping-bag pad-c"></i>
                     </a>
@@ -69,6 +69,8 @@
                         {% endif %}
                     </p>
                 </div>
+
+
 
                 <!-- Profile Dropdown -->
                 <li class="nav-item dropdown navbar-icon-link ml-3 d-none d-md-inline">
@@ -133,18 +135,31 @@
                     </li>
 
                     <!-- Shopping bag icon for small devices -->
-                    <div></div>
-                    <li class="nav-item d-md-none">
-                        <a class="nav-link" href="">
-                            <i class="fas fa-shopping-bag"></i>
-                        </a>
-                    </li>
+                    <div class="d-md-none">
+                        <li class="nav-item">
+                            <a class="nav-link" href="">
+                                <i class="fas fa-shopping-bag"></i>
+                            </a>
+                        </li>
+                        <div class="d-md-none">
+                            <p class="my-0 total-c">
+                                {% if grand_total %}
+                                €{{ grand_total|floatformat:2 }}
+                                {% else %}
+                                €0.00
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+
                     <!-- Profile icon for small devices -->
-                    <li class="nav-item d-md-none">
-                        <a class="nav-link" href="">
-                            <i class="fas fa-user"></i>
-                        </a>
-                    </li>
+                    <div>
+                        <li class="nav-item d-md-none">
+                            <a class="nav-link" href="">
+                                <i class="fas fa-user"></i>
+                            </a>
+                        </li>
+                    </div>
                 </ul>
             </div>
         </div>
