@@ -34,25 +34,14 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-class ProductImage(models.Model):
-    product = models.ForeignKey(
-        Product, 
-        related_name='product_images', 
-        on_delete=models.CASCADE
-    )
-    image = models.ImageField(upload_to='product_images/')
-    
-    def __str__(self):
-        return self.product.name + " Image"
-
 
 class ProductImage(models.Model):
     product = models.ForeignKey(
         Product, 
-        related_name='product_images', 
+        related_name='product_images',
         on_delete=models.CASCADE
     )
     image = models.ImageField(upload_to='product_images/')
-    
+
     def __str__(self):
         return self.product.name + " Image"
