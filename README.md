@@ -78,5 +78,21 @@ Drew's Coffee maintains active Facebook and Instagram accounts to engage with ou
 ### Mailing List
 Drew's Coffee leverages Mailchimp to manage our mailing list effectively. Subscribers receive bi-weekly newsletters containing exclusive promotions, updates on new coffee releases, and curated content related to coffee culture. This mailing list serves as a direct channel of communication to our most engaged customers, and analytics from Mailchimp assist us in optimizing the content and timing of these communications to enhance user engagement and drive sales.
 
+## User Goals
 
+- General: Easy navigation, accurate information.
+- Product Page: Detailed product info, clear images, reviews and ratings.
+- Contact Us Page: Readily available contact information, inquiry form.
+- Blog Page: Valuable content, search and filter options.
+- Cart Page: Simple checkout, edit and review options.
+- Profile Page: Personalized experience, strong security measures.
+
+## Site Owner Goals
+
+- Achieve consistent user growth while maintaining strong user engagement and retention rates.
+- Product Page: Encourage product sales, collect user reviews.
+- Contact Page: Generate leads, offer excellent customer service.
+- Blog Page: Build authority, encourage engagement and time-on-page.
+- Cart Page: Maximize conversions, minimize cart abandonment.
+- Profile Page: Encourage sign-ups, collect valuable user data.
 
