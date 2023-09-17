@@ -44,16 +44,18 @@
 
             <div class="d-flex align-items-center">
                 <!-- Search bar for medium and large devices -->
-                <form class="form-inline ml-auto d-none d-lg-block" method="GET" action="">
-                    <input class="form-control input-proup custom-search custom-search-md mr-sm-2" type="text" name="q"
-                        placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-primary custom-button custom-button-md my-2 my-sm-0"
-                            type="submit">
-                            <i class="fas fa-search i-w"></i>
-                        </button>
+                <form class="form-inline ml-auto d-none d-lg-flex align-items-center" method="GET" action="">
+                    <div class="input-group custom-search-container">
+                        <input class="form-control custom-search custom-search-md" type="text" name="q"
+                            placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary custom-button custom-button-md" type="submit">
+                                <i class="fas fa-search i-w"></i>
+                            </button>
+                        </div>
                     </div>
                 </form>
+
 
                 <!-- Shopping bag icon for medium and large devices -->
                 <a href="" class="navbar-icon-link ml-3 d-none d-md-inline">
