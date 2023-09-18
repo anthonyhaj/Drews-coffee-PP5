@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <!-- Product Image -->
+        <div class="col-lg-6">
+            <a href="{{ product.image.url }}" target="_blank">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid">
+            </a>
+        </div>
+        <!-- Product Details -->
+        <div class="col-lg-6">
+            <h1 class="mb-4">{{ product.name }}</h1>
+            <p class="mb-4">{{ product.description }}</p>
+            <h3 class="mb-4">€{{ product.price }}</h3>
+            <a href="#" class="btn btn-primary btn-lg" role="button">Add to Shopping Bag</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -9,10 +9,11 @@
         <ul class="list-group">
             {% for category in categories %}
             <li class="list-group-item">
-                <a href="?category={{ category.name }}" class="category-link" data-category="{{ category.friendly_name }}">{{ category.friendly_name }}</a>
+                <a href="?category={{ category.name }}" class="category-link"
+                    data-category="{{ category.friendly_name }}">{{ category.friendly_name }}</a>
             </li>
             {% endfor %}
-        </ul>        
+        </ul>
     </div>
     <!-- Products -->
     <div class="col-md-9 text-center">
@@ -46,7 +47,7 @@
                     {% endif %}
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">{{ product.name }}</a>
+                            <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
                         </h4>
                         <h5>€{{ product.price }}</h5>
                     </div>
