@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <!-- Category Selector -->
+    <div class="col-md-3">
+        <h3>Categories</h3>
+        <ul class="list-group">
+            {% for category in categories %}
+            <li class="list-group-item">
+                <a href="?category={{ category.name }}">{{ category.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Products -->
+    <div class="col-md-9">
+        <h1>All Products</h1>
+
+        <!-- Filter dropdown -->
+        <form method="get" action="" class="mb-3">
+            <label for="sort_by">Sort By:</label>
+            <select name="sort_by" id="sort_by" onchange="this.form.submit()">
+                <!-- Sorting options here -->
+            </select>
+        </form>
+
+        <!-- Product Cards -->
+        <div class="row">
+            {% for product in products %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{{ product.image_url }}" alt="Product image for {{ product.name }}">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">{{ product.name }}</a>
+                        </h4>
+                        <h5>€{{ product.price }}</h5>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Rating: {{ product.rating }}</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

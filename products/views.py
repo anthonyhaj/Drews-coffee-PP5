@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Product
 from django.db.models import Q
+from django.db.models.functions import Lower
 
 
 def all_products(request):
@@ -37,5 +38,4 @@ def all_products(request):
         queryset = queryset.order_by(Lower('name'))
 
     context = {'products': queryset}
-    return render(request, 'your_template.html', context)
-
+    return render(request, 'products/products.html', context)
