@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Product
+from .models import Product, Category
 from django.db.models import Q
 from django.db.models.functions import Lower
 
@@ -16,26 +16,23 @@ def all_products(request):
         )
 
     # Sorting
-    sort_by = request.GET.get('sort_by', 'name')
-    
-    if sort_by == 'price_low':
-        queryset = queryset.order_by('price')
-    elif sort_by == 'price_high':
-        queryset = queryset.order_by('-price')
-    elif sort_by == 'rating_low':
-        queryset = queryset.order_by('rating')
-    elif sort_by == 'rating_high':
-        queryset = queryset.order_by('-rating')
-    elif sort_by == 'category_az':
-        queryset = queryset.order_by(Lower('category__name'))
-    elif sort_by == 'category_za':
-        queryset = queryset.order_by(Lower('category__name').desc())
-    elif sort_by == 'name_az':
-        queryset = queryset.order_by(Lower('name'))
-    elif sort_by == 'name_za':
-        queryset = queryset.order_by(Lower('name').desc())
-    else:
-        queryset = queryset.order_by(Lower('name'))
-
-    context = {'products': queryset}
+    sort_by = request.GET.get('sort_by', 'name_az')
+    sort_options = {
+        'price_low': 'price',
+        'price_high': '-price',
+        'rating_low': 'rating',
+        'rating_high': '-rating',
+        'category_az': Lower('category__name'),
+        'category_za': Lower('category__name').desc(),
+        'name_az': Lower('name'),
+        'name_za': Lower('name').desc()
+    }
+    sort_order = sort_options.get(sort_by, Lower('name'))
+    queryset = queryset.order_by(sort_order)
+    categories = Category.objects.all()
+    context = {
+        'products': queryset,
+        'sort_by': sort_by,
+        'categories': categories
+    }
     return render(request, 'products/products.html', context)
