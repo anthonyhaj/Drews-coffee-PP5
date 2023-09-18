@@ -13,7 +13,7 @@ def all_products(request):
         queryset = queryset.filter(
             Q(name__icontains=query) |
             Q(description__icontains=query)
-        )
+        ).order_by(Lower('name'), Lower('description'))
 
     # Sorting
     sort_by = request.GET.get('sort_by', 'name_az')

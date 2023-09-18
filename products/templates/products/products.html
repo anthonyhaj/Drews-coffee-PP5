@@ -4,32 +4,33 @@
 {% block content %}
 <div class="row">
     <!-- Category Selector -->
-    <div class="col-md-3">
+    <div class="col-md-3 d-none d-md-block">
         <h3>Categories</h3>
         <ul class="list-group">
             {% for category in categories %}
             <li class="list-group-item">
-                <a href="?category={{ category.name }}">{{ category.name }}</a>
+                <a href="?category={{ category.friendly_name }}">{{ category.friendly_name }}</a>
             </li>
             {% endfor %}
         </ul>
     </div>
 
     <!-- Products -->
-    <div class="col-md-9">
+    <div class="col-md-9 text-center">
         <h1>All Products</h1>
-
         <!-- Filter dropdown -->
         <form method="get" action="" class="mb-3">
             <label for="sort_by">Sort By:</label>
             <select name="sort_by" id="sort_by" onchange="this.form.submit()">
-                <option value="" disabled selected>Choose...</option>
-                <option value="name_asc">Name (A-Z)</option>
-                <option value="name_desc">Name (Z-A)</option>
-                <option value="price_asc">Price (Low-High)</option>
-                <option value="price_desc">Price (High-Low)</option>
-                <option value="rating_asc">Rating (Low-High)</option>
-                <option value="rating_desc">Rating (High-Low)</option>
+                <option value="" {% if sort_by == "" %}selected{% endif %}>Choose...</option>
+                <option value="name_az" {% if sort_by == "name_az" %}selected{% endif %}>Name (A-Z)</option>
+                <option value="name_za" {% if sort_by == "name_za" %}selected{% endif %}>Name (Z-A)</option>
+                <option value="price_low" {% if sort_by == "price_low" %}selected{% endif %}>Price (Low-High)</option>
+                <option value="price_high" {% if sort_by == "price_high" %}selected{% endif %}>Price (High-Low)</option>
+                <option value="rating_low" {% if sort_by == "rating_low" %}selected{% endif %}>Rating (Low-High)
+                </option>
+                <option value="rating_high" {% if sort_by == "rating_high" %}selected{% endif %}>Rating (High-Low)
+                </option>
             </select>
         </form>
 
@@ -59,4 +60,25 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sortSelector = document.getElementById("sort_by");
+        const currentSort = new URLSearchParams(window.location.search).get('sort_by');
+
+        if (currentSort) {
+            sortSelector.value = currentSort;
+        }
+
+        sortSelector.addEventListener("change", function () {
+            const selectedOption = this.value;
+            let url = new URL(window.location.href);
+            url.searchParams.set('sort_by', selectedOption);
+            window.location.href = url;
+        });
+    });
+</script>
 {% endblock %}
