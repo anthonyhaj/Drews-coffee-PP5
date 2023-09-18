@@ -9,7 +9,7 @@
         <ul class="list-group">
             {% for category in categories %}
             <li class="list-group-item">
-                <a href="#" class="category-link" data-category="{{ category.friendly_name }}">{{ category.friendly_name }}</a>
+                <a href="?category={{ category.name }}" class="category-link" data-category="{{ category.friendly_name }}">{{ category.friendly_name }}</a>
             </li>
             {% endfor %}
         </ul>        

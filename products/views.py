@@ -62,8 +62,7 @@ def all_products(request):
     context = {
         'products': products,
         'search_term': query,
-        'categories': categories
-        if filtered_categories is None else filtered_categories,
+        'categories': categories,
         'sort_by': sort_by
     }
 
