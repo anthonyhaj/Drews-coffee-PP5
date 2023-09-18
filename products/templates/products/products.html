@@ -36,6 +36,7 @@
 
         <!-- Product Cards -->
         <div class="row">
+            {% if products %}
             {% for product in products %}
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
@@ -56,29 +57,32 @@
                 </div>
             </div>
             {% endfor %}
+            {% else %}
+            <div class="col-12">
+                <p class="text-center">No products found for the given search criteria.</p>
+            </div>
+            {% endif %}
         </div>
-    </div>
-</div>
 
-{% endblock %}
+        {% endblock %}
 
-{% block postloadjs %}
-{{ block.super }}
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const sortSelector = document.getElementById("sort_by");
-        const currentSort = new URLSearchParams(window.location.search).get('sort_by');
+        {% block postloadjs %}
+        {{ block.super }}
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const sortSelector = document.getElementById("sort_by");
+                const currentSort = new URLSearchParams(window.location.search).get('sort_by');
 
-        if (currentSort) {
-            sortSelector.value = currentSort;
-        }
+                if (currentSort) {
+                    sortSelector.value = currentSort;
+                }
 
-        sortSelector.addEventListener("change", function () {
-            const selectedOption = this.value;
-            let url = new URL(window.location.href);
-            url.searchParams.set('sort_by', selectedOption);
-            window.location.href = url;
-        });
-    });
-</script>
-{% endblock %}
+                sortSelector.addEventListener("change", function () {
+                    const selectedOption = this.value;
+                    let url = new URL(window.location.href);
+                    url.searchParams.set('sort_by', selectedOption);
+                    window.location.href = url;
+                });
+            });
+        </script>
+        {% endblock %}
