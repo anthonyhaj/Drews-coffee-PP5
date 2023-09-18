@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="row">
@@ -31,7 +32,11 @@
             {% for product in products %}
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                    <img class="card-img-top" src="{{ product.image_url }}" alt="Product image for {{ product.name }}">
+                    {% if product.image and product.image.url %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+                    {% else %}
+                    <img src="{% static 'img/logo.png' %}" alt="">
+                    {% endif %}
                     <div class="card-body">
                         <h4 class="card-title">
                             <a href="#">{{ product.name }}</a>
