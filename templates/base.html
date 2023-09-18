@@ -44,7 +44,7 @@
 
             <div class="d-flex align-items-center">
                 <!-- Search bar for medium and large devices -->
-                <form class="form-inline ml-auto d-none d-lg-flex align-items-center" method="GET" action="">
+                <form class="form-inline ml-auto d-none d-lg-flex align-items-center" method="GET" action="{% url 'products' %}">
                     <div class="input-group custom-search-container">
                         <input class="form-control custom-search custom-search-md" type="text" name="q"
                             placeholder="Search" aria-label="Search">
@@ -109,8 +109,8 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
                         <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
                             <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
-                            <a class="dropdown-item" href="">Coffee</a>
-                            <a class="dropdown-item" href="">Mugs</a>
+                            <a class="dropdown-item" href="{% url 'products' %}?category=coffee">Coffee</a>
+                            <a class="dropdown-item" href="{% url 'products' %}?category=mugs">Mugs</a>
                             <a class="dropdown-item" href="">Accessories</a>
                         </div>
                     </li>
@@ -123,7 +123,7 @@
 
                     <!-- Search bar for small devices in hamburger menu -->
                     <li class="nav-item d-lg-none">
-                        <form class="form-inline ml-auto" method="GET" action="">
+                        <form class="form-inline ml-auto" method="GET" action="{% url 'products' %}">
                             <input class="form-control custom-search mr-sm-2" type="search" placeholder="Search"
                                 type="text" name="q" aria-label="Search">
                             <div class="input-group-append">

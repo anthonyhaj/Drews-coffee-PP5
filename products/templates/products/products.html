@@ -9,12 +9,11 @@
         <ul class="list-group">
             {% for category in categories %}
             <li class="list-group-item">
-                <a href="?category={{ category.friendly_name }}">{{ category.friendly_name }}</a>
+                <a href="#" class="category-link" data-category="{{ category.friendly_name }}">{{ category.friendly_name }}</a>
             </li>
             {% endfor %}
-        </ul>
+        </ul>        
     </div>
-
     <!-- Products -->
     <div class="col-md-9 text-center">
         <h1>All Products</h1>
