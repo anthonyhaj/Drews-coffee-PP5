@@ -69,9 +69,6 @@
                         {% endif %}
                     </p>
                 </div>
-
-
-
                 <!-- Profile Dropdown -->
                 <li class="nav-item dropdown navbar-icon-link ml-3 d-none d-md-inline">
                     <a class="dropdown-toggle dt-c navbar-icon-link" id="profileDropdown" role="button"
@@ -166,7 +163,7 @@
     </nav>
     <!-- Free delivery banner -->
     <div class="container-fluid custom-banner text-white text-center">
-        <p class="mb-custom">Orders more than €50 are eligible for free delivery!</p>
+        <p class="mb-custom">Orders more than €{{ free_delivery_threshold }} are eligible for free delivery!</p>
     </div>
 
     <!-- Django messages -->
