@@ -15,6 +15,21 @@
             <h1 class="mb-4">{{ product.name }}</h1>
             <p class="mb-4">{{ product.description }}</p>
             <h3 class="mb-4">€{{ product.price }}</h3>
+
+            <!-- Quantity Selector -->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1"
+                        onclick="decreaseQuantity()">-</button>
+                </div>
+                <input type="number" id="quantity" class="form-control text-center" placeholder=""
+                    aria-label="Example text with button addon" aria-describedby="button-addon1" value="1">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                        onclick="increaseQuantity()">+</button>
+                </div>
+            </div>
+
             <a href="#" class="btn btn-primary btn-lg" role="button">Add to Shopping Bag</a>
         </div>
     </div>

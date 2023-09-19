@@ -8,6 +8,18 @@ h2 p {
     color-scheme: #fff;
 }
 
+a {
+    color: #c7a17a;
+    text-decoration: none !important;
+}
+
+a:hover,
+a:focus {
+    color: #7b4b27 !important;
+    background-color: transparent !important;
+}
+
+
 i {
     color: black !important;
 }
@@ -109,6 +121,7 @@ a {
     padding-bottom: 20px;
 }
 
+/* Dropdown Styles */
 .dt-c {
     color: #c7a17a !important;
 }
@@ -116,6 +129,7 @@ a {
 .dropdown-toggle::after {
     color: #c7a17a;
 }
+
 
 /* Media queries for large devices */
 @media (min-width: 992px) {

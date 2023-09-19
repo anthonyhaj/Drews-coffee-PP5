@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from .models import Product, Category
+from .models import Product, Category, ProductImage
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib import messages
@@ -72,7 +72,9 @@ def all_products(request):
 
 def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
+    images = ProductImage.objects.filter(product=product)
     context = {
-        'product': product
+        'product': product,
+        'image': images
     }
     return render(request, 'products/product_detail.html', context)
