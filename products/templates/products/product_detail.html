@@ -17,7 +17,7 @@
             <h3 class="mb-4">€{{ product.price }}</h3>
 
             <!-- Shopping Bag Form -->
-            <form method="post" action="" class=" align-c">
+            <form method="post" action="{% url 'add_to_bag' product.id %}" class=" align-c">
                 {% csrf_token %}
                 <!-- Quantity Selector -->
                 <div class="input-group mb-3 align-c">
@@ -30,6 +30,7 @@
                         <button type="button" class="btn btn-outline-secondary" onclick="increaseQuantity()">+</button>
                     </div>
                 </div>
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 <button type="submit" class="btn btn-primary btn-lg">Add to Shopping Bag</button>
             </form>
             <!-- Keep Shopping Button -->
