@@ -1,6 +1,10 @@
-from django.shortcuts import redirect, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404
+)
 from django.contrib import messages
 from products.models import Product
+from bag.templatetags import bag_filters
+
 
 
 def view_bag(request):
