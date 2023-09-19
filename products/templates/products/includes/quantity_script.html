@@ -1,0 +1,55 @@
+<script type="text/javascript">
+    // Function to enable or disable the +/- buttons
+    function handleEnableDisable(itemId) {
+        var currentValue = parseInt($(`#id_qty_${itemId}`).val());
+        $(`#decrement-qty_${itemId}`).prop('disabled', currentValue < 2);
+        $(`#increment-qty_${itemId}`).prop('disabled', currentValue > 98);
+    }
+
+    // Initialize state of +/- buttons for each item
+    var allQtyInputs = $('.qty_input');
+    allQtyInputs.each(function () {
+        handleEnableDisable($(this).data('item_id'));
+    });
+
+    // Handle change in quantity input
+    $('.qty_input').change(function () {
+        var itemId = $(this).data('item_id');
+        var isValid = $.isNumeric($(this).val()) && $(this).val() >= 1 && $(this).val() <= 99;
+
+        if (!isValid) {
+            toastr.error('Invalid quantity');
+            return;
+        }
+
+        // AJAX call to update quantity
+        $.ajax({
+            url: `/api/update-quantity/${itemId}/`,
+            method: 'POST',
+            data: {
+                'quantity': $(this).val()
+            },
+            success: function () {
+                toastr.success('Updated');
+            },
+            error: function () {
+                toastr.error('Failed');
+            }
+        });
+
+        handleEnableDisable(itemId);
+    });
+
+    // Increment button click handler
+    $(".increment-qty").click(function (e) {
+        e.preventDefault();
+        $('#quantity').val(parseInt($('#quantity').val()) + 1);
+    });
+
+    // Decrement button click handler
+    $(".decrement-qty").click(function (e) {
+    e.preventDefault();
+    var currentValue = parseInt($('#quantity').val());
+    if (currentValue > 1) $('#quantity').val(currentValue - 1);
+    });
+</script>

@@ -17,25 +17,29 @@
             <h3 class="mb-4">€{{ product.price }}</h3>
 
             <!-- Shopping Bag Form -->
-            <form method="post" action="{% url 'add_to_bag' product.id %}" class=" align-c">
+            <form class="align-c" method="post" action="{% url 'add_to_bag' product.id %}">
                 {% csrf_token %}
                 <!-- Quantity Selector -->
-                <div class="input-group mb-3 align-c">
+                <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <button type="button" class="btn btn-outline-secondary" onclick="decreaseQuantity()">-</button>
+                        <button type="button" class="btn btn-outline-secondary decrement-qty">-</button>
                     </div>
                     <input type="number" name="quantity" id="quantity" class="form-control text-center" value="1"
                         min="1">
-                    <div class="input-group-append align-c">
-                        <button type="button" class="btn btn-outline-secondary" onclick="increaseQuantity()">+</button>
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-outline-secondary increment-qty">+</button>
                     </div>
                 </div>
+
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 <button type="submit" class="btn btn-primary btn-lg">Add to Shopping Bag</button>
             </form>
             <!-- Keep Shopping Button -->
-            <div class=" align-items-center mt-2 align-c">
-                <a href="{% url 'products' %}" class="btn btn-secondary btn-lg ml-2 " role="button">Keep Shopping</a>
+            <div class="mt-2 align-c">
+                <a href="{% url 'products' %}" class="btn btn-secondary btn-lg ml-2" role="button">Keep Shopping</a>
             </div>
-
-            {% endblock %}
+        </div>
+    </div>
+</div>
+{% include 'products/includes/quantity_script.html' %}
+{% endblock %}
