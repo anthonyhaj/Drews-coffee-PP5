@@ -72,9 +72,7 @@ def all_products(request):
 
 def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
-    images = ProductImage.objects.filter(product=product)
     context = {
         'product': product,
-        'image': images
     }
     return render(request, 'products/product_detail.html', context)
