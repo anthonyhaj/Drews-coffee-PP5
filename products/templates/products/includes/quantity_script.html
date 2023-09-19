@@ -43,13 +43,16 @@
     // Increment button click handler
     $(".increment-qty").click(function (e) {
         e.preventDefault();
-        $('#quantity').val(parseInt($('#quantity').val()) + 1);
+        var itemId = $(this).data('item_id');
+        var currentVal = parseInt($(`#id_qty_${itemId}`).val());
+        if (currentVal < 99) $(`#id_qty_${itemId}`).val(currentVal + 1);
     });
 
     // Decrement button click handler
     $(".decrement-qty").click(function (e) {
-    e.preventDefault();
-    var currentValue = parseInt($('#quantity').val());
-    if (currentValue > 1) $('#quantity').val(currentValue - 1);
+        e.preventDefault();
+        var itemId = $(this).data('item_id');
+        var currentVal = parseInt($(`#id_qty_${itemId}`).val());
+        if (currentVal > 1) $(`#id_qty_${itemId}`).val(currentVal - 1);
     });
 </script>
