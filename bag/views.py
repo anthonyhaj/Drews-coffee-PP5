@@ -6,7 +6,6 @@ from products.models import Product
 from bag.templatetags import bag_filters
 
 
-
 def view_bag(request):
     """ A view that renders the bag contents page """
 
@@ -21,8 +20,9 @@ def add_to_bag(request, item_id):
     quantity = int(request.POST.get('quantity', 1))
     redirect_url = request.POST.get('redirect_url', '/')
     bag = request.session.get('bag', {})
+    size = None
 
-    item_attributes = {}  # You can store item-specific attributes here
+    item_attributes = {} 
 
     if 'size' in request.POST:
         item_attributes['size'] = request.POST['size']
@@ -48,3 +48,4 @@ def add_to_bag(request, item_id):
 
     request.session['bag'] = bag
     return redirect(redirect_url)
+

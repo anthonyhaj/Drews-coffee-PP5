@@ -27,8 +27,12 @@ def bag_contents(request):
             print(f"Unexpected structure for item_data: {item_data}")
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
-        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
-        free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
+        delivery = round(total * Decimal(
+            settings.STANDARD_DELIVERY_PERCENTAGE / 100
+        ), 2)
+        free_delivery_delta = round(
+            settings.FREE_DELIVERY_THRESHOLD - total, 2
+        )
     else:
         delivery = 0
         free_delivery_delta = 0
