@@ -1,18 +1,27 @@
 <script type="text/javascript">
-    // Function to enable or disable the +/- buttons
-    function handleEnableDisable(itemId) {
-        var currentValue = parseInt($(`#id_qty_${itemId}`).val());
-        $(`#decrement-qty_${itemId}`).prop('disabled', currentValue < 2);
-        $(`#increment-qty_${itemId}`).prop('disabled', currentValue > 98);
+    // Function to handle enable/disable state of +/- buttons
+    function handleEnableDisable(itemId, inputElement) {
+        var currentValue;
+        if (inputElement) {
+            currentValue = parseInt($(inputElement).val());
+        } else {
+            currentValue = parseInt($(`#id_qty_${itemId}`).val());
+        }
+        var decrementButton = $(inputElement).closest('.input-group').find('.decrement-qty');
+        var incrementButton = $(inputElement).closest('.input-group').find('.increment-qty');
+
+        $(decrementButton).prop('disabled', currentValue < 2);
+        $(incrementButton).prop('disabled', currentValue > 98);
     }
 
-    // Initialize state of +/- buttons for each item
+    // Initialize the state of the +/- buttons for each item
     var allQtyInputs = $('.qty_input');
     allQtyInputs.each(function () {
-        handleEnableDisable($(this).data('item_id'));
+        var itemId = $(this).data('item_id');
+        handleEnableDisable(itemId, this);
     });
 
-    // Handle change in quantity input
+    // Handle changes in quantity input
     $('.qty_input').change(function () {
         var itemId = $(this).data('item_id');
         var isValid = $.isNumeric($(this).val()) && $(this).val() >= 1 && $(this).val() <= 99;
@@ -22,7 +31,7 @@
             return;
         }
 
-        // AJAX call to update quantity
+        // Perform AJAX call to update quantity
         $.ajax({
             url: `/api/update-quantity/${itemId}/`,
             method: 'POST',
@@ -37,22 +46,26 @@
             }
         });
 
-        handleEnableDisable(itemId);
+        handleEnableDisable(itemId, this);
     });
 
-    // Increment button click handler
-    $(".increment-qty").click(function (e) {
+    // Increment and Decrement button click handlers
+    $(".increment-qty, .decrement-qty").click(function (e) {
         e.preventDefault();
         var itemId = $(this).data('item_id');
-        var currentVal = parseInt($(`#id_qty_${itemId}`).val());
-        if (currentVal < 99) $(`#id_qty_${itemId}`).val(currentVal + 1);
-    });
+        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+        var currentValue = parseInt($(closestInput).val());
 
-    // Decrement button click handler
-    $(".decrement-qty").click(function (e) {
-        e.preventDefault();
-        var itemId = $(this).data('item_id');
-        var currentVal = parseInt($(`#id_qty_${itemId}`).val());
-        if (currentVal > 1) $(`#id_qty_${itemId}`).val(currentVal - 1);
+        if ($(this).hasClass('increment-qty')) {
+            if (currentValue < 99) {
+                $(closestInput).val(currentValue + 1);
+            }
+        } else {
+            if (currentValue > 1) {
+                $(closestInput).val(currentValue - 1);
+            }
+        }
+
+        handleEnableDisable(itemId, closestInput);
     });
 </script>
