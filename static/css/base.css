@@ -8,7 +8,12 @@ h2 p {
     color-scheme: #fff;
 }
 
+hr {
+    background-color: #c7a17a;
+}
+
 a {
+    cursor: pointer !important;
     color: #c7a17a;
     text-decoration: none !important;
 }

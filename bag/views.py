@@ -13,39 +13,87 @@ def view_bag(request):
 
 
 def add_to_bag(request, item_id):
-    """
-    Add a quantity of a product to the bag using item_id
-    """
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity', 1))
     redirect_url = request.POST.get('redirect_url', '/')
     bag = request.session.get('bag', {})
     size = None
 
-    item_attributes = {} 
-
     if 'size' in request.POST:
-        item_attributes['size'] = request.POST['size']
+        size = request.POST['size']
 
-    if item_id in bag:
-        # Existing bag entry
-        if 'items_by_quantity' in bag[item_id]:
-            bag[item_id]['items_by_quantity'] += quantity
-            if item_attributes:
-                bag[item_id]['attributes'].update(item_attributes)
+    # Check if the item is already in the bag
+    if item_id in bag.keys():
+        # If it's an int, it's not whats expected. Reset to a dictionary.
+        if isinstance(bag[item_id], int):
+            bag[item_id] = {}
+
+        if size:
+            if 'items_by_size' not in bag[item_id]:
+                bag[item_id]['items_by_size'] = {}    
+            if size in bag[item_id]['items_by_size']:
+                bag[item_id]['items_by_size'][size] += quantity
+            else:
+                bag[item_id]['items_by_size'][size] = quantity
         else:
-            bag[item_id]['items_by_quantity'] = quantity
-            if item_attributes:
-                bag[item_id]['attributes'] = item_attributes
+            if 'items_by_quantity' not in bag[item_id]:
+                bag[item_id]['items_by_quantity'] = 0
+   
+            bag[item_id]['items_by_quantity'] += quantity
     else:
-        # New bag entry
-        bag[item_id] = {
-            'items_by_quantity': quantity,
-            'attributes': item_attributes
-        }
+        if size:
+            bag[item_id] = {'items_by_size': {size: quantity}}
+        else:
+            bag[item_id] = {'items_by_quantity': quantity}
 
     messages.success(request, f'Updated {product.name} in your bag.')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
 
+def adjust_bag(request, item_id):
+    """Adjust the quantity of the specified product to the specified amount"""
+    
+    product = get_object_or_404(Product, pk=item_id)
+    quantity = int(request.POST.get('quantity'))
+    size = None
+    if 'size' in request.POST:
+        size = request.POST['size']
+    bag = request.session.get('bag', {})
+    
+    if item_id in bag.keys():
+        # If the item exists, but is not a dictionary, we reset it.
+        if isinstance(bag[item_id], int):
+            bag[item_id] = {}
+        
+        # Handle the size logic
+        if size:
+            if 'items_by_size' not in bag[item_id]:
+                messages.error(request, f'Size {size.upper()} {product.name} does not exist in your bag')
+                return redirect(reverse('view_bag'))
+            
+            if quantity > 0:
+                bag[item_id]['items_by_size'][size] = quantity
+                messages.success(request, f'Updated size {size.upper()} {product.name} quantity to {bag[item_id]["items_by_size"][size]}')
+            else:
+                del bag[item_id]['items_by_size'][size]
+                if not bag[item_id]['items_by_size']:
+                    bag.pop(item_id)
+                messages.success(request, f'Removed size {size.upper()} {product.name} from your bag')
+        else:
+            if 'items_by_quantity' not in bag[item_id]:
+                messages.error(request, f'{product.name} does not exist in your bag')
+                return redirect(reverse('view_bag'))
+            
+            if quantity > 0:
+                bag[item_id]['items_by_quantity'] = quantity
+                messages.success(request, f'Updated {product.name} quantity to {bag[item_id]["items_by_quantity"]}')
+            else:
+                bag.pop(item_id)
+                messages.success(request, f'Removed {product.name} from your bag')
+    else:
+        messages.error(request, f'{product.name} does not exist in your bag')
+        return redirect(reverse('view_bag'))
+    
+    request.session['bag'] = bag
+    return redirect(reverse('view_bag'))
