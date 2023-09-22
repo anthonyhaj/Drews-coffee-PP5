@@ -37,6 +37,11 @@ a {
     text-decoration: none;
 }
 
+.fa-lock {
+    color: #fff !important;
+    margin-left: 5px;
+}
+
 .navbar-icon-link {
     margin-left: 0.5rem;
 }
@@ -50,6 +55,16 @@ a {
     background-color: #7b4b27 !important;
     border-color: #7b4b27 !important;
     color: #ffffff !important;
+}
+
+.btn-second {
+    background-color: #7b4b27 !important;
+    border-color: #7b4b27 !important;
+    color: #ffffff;
+}
+
+.btn-second:hover {
+    background-color: #f1f1f1;
 }
 
 .total-c {
