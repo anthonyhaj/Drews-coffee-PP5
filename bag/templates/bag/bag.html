@@ -32,8 +32,6 @@
                             </div>
                             <div style="flex: 3;">
                                 {% include 'bag/quantity_form.html' %}
-                                <a class="update-link text-success" data-item_id="{{ item.id }}">Update |</a>
-                                <a href="#" class="remove-link text-danger" data-item_id="{{ item.id }}">Remove</a>
                             </div>
                         </div>
                     </li>
@@ -42,8 +40,8 @@
             </div>
             <div class="text-right">
                 <strong>Total: </strong>€{{ total }}<br>
-                <strong>Delivery: </strong>€{{ delivery }}<br>
-                <h4><strong>Grand Total: </strong>€{{ grand_total }}</h4>
+                <strong>Delivery: </strong>€{{ delivery|floatformat:2 }}<br>
+                <h4><strong>Grand Total: </strong>€{{ grand_total|floatformat:2 }}</h4>
                 <a href="#" class="btn btn-primary">Proceed to Checkout</a>
             </div>
             {% else %}
@@ -59,5 +57,19 @@ $('.update-link').click(function (e) {
     var form = $(this).prev('.update-form');
     form.submit();
 })
+
+// Remove item and reload on click
+$('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
 </script>
 {% endblock %}
