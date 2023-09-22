@@ -42,8 +42,14 @@
                 <strong>Total: </strong>€{{ total }}<br>
                 <strong>Delivery: </strong>€{{ delivery|floatformat:2 }}<br>
                 <h4><strong>Grand Total: </strong>€{{ grand_total|floatformat:2 }}</h4>
-                <a href="#" class="btn btn-primary">Proceed to Checkout</a>
+                <div>
+                    <a href="#" class="btn btn-primary mb-2">Proceed to Checkout</a>
+                </div>
+                <div>
+                    <a href="{% url 'products' %}" class="btn btn-primary">Keep Shopping</a>
+                </div>
             </div>
+
             {% else %}
             <p>Your bag is empty.</p>
             {% endif %}
@@ -52,24 +58,27 @@
 </div>
 {% include 'products/includes/quantity_script.html' %}
 <script>
-// Update quantity on click
-$('.update-link').click(function (e) {
-    var form = $(this).prev('.update-form');
-    form.submit();
-})
+    // Update quantity on click
+    $('.update-link').click(function (e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
 
-// Remove item and reload on click
-$('.remove-item').click(function(e) {
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var size = $(this).data('product_size');
         var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+            'size': size
+        };
 
         $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
+            .done(function () {
+                location.reload();
+            });
     })
 </script>
 {% endblock %}
