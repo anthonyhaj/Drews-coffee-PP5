@@ -1,0 +1,41 @@
+<div class="toast bg-white success-toast" role="alert" data-autohide="false" aria-live="assertive" aria-atomic="true">
+  <div class="toast-arrow"></div>
+  <div class="toast-header bg-white">
+    <strong class="mr-auto text-success">Success</strong>
+    <button type="button" class="close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    <!-- Message Section -->
+    <div class="toast-message">
+      <p>{{ message }}</p>
+    </div>
+
+    <!-- Product Details -->
+    <div class="toast-products">
+      <ul>
+        {% for items in bag_items %}
+        <li>
+          {% if item.product.image %}
+          <img src="{{ item.product_image }}" alt="{{ item.product_name }}" width="30" height="30">
+          {% else %}
+          <img class="w-100" src="{{ STATIC_URL }}logo.png" alt="{{ item.product.name }}" width="30" height="30">
+          {% endif %}
+        </li>
+        
+
+        {% endfor %}
+
+      </ul>
+    </div>
+
+    <!-- Additional Information and Actions -->
+    <div class="toast-actions">
+      {% if free_delivery_delta > 0 %}
+      <p>Spend <strong>${{ free_delivery_delta }}</strong> more for free next-day delivery.</p>
+      {% endif %}
+      <a href="{% url 'view_bag' %}" class="btn btn-primary btn-sm">View Shopping Bag</a>
+    </div>
+  </div>
+</div>
