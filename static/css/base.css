@@ -42,6 +42,11 @@ a {
     margin-left: 5px;
 }
 
+.fa-lock-black {
+    color: #c7a17a !important;
+    margin-left: 5px;
+}
+
 .navbar-icon-link {
     margin-left: 0.5rem;
 }
@@ -165,6 +170,18 @@ a {
 
 .my-toast {
     overflow: visible;
+}
+
+/* Taken from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 36px;
 }
 
 /* Convenience classes - colors copied from Bootstrap */
