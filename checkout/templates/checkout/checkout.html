@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="mb-4">Checkout</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Checkout Form -->
+        <div class="col-lg-8">
+            <form id="checkout-form">
+                <!-- Personal Details -->
+                <h2>Personal Details</h2>
+                <div class="form-group">
+                    <label for="full_name">Full Name</label>
+                    <input type="text" class="form-control" id="full_name" name="full_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone_number">Phone Number</label>
+                    <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+                </div>
+
+                <!-- Address Details -->
+                <div class="form-group">
+                    <label for="address1">Address Line 1</label>
+                    <input type="text" class="form-control" id="address1" name="address1" required>
+                </div>
+                <div class="form-group">
+                    <label for="address2">Address Line 2 (Optional)</label>
+                    <input type="text" class="form-control" id="address2" name="address2">
+                </div>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" class="form-control" id="town_city" name="town_city" required>
+                </div>
+                <div class="form-group">
+                    <label for="town_city">Town/City</label>
+                    <input type="text" class="form-control" id="town_city" name="town_city" required>
+                </div>
+                <div class="form-group">
+                    <label for="county">County (Optional)</label>
+                    <input type="text" class="form-control" id="town_city" name="town_city">
+                </div>
+                <div class="form-group">
+                    <label for="postcode">Postcode</label>
+                    <input type="text" class="form-control" id="postcode" name="postcode" required>
+                </div>
+            </form>
+        </div>
+
+        <!-- Summary & Total -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    Order Summary
+                </div>
+                <ul class="list-group list-group-flush">
+                    <!-- Loop through bag items -->
+                    {% for item in bag_items %}
+                    <li class="list-group-item d-flex align-items-center">
+                        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="rounded me-3"
+                            width="50" height="50">
+                        <div>
+                            <strong>{{ item.product.name }}</strong><br>
+                            Quantity: {{ item.quantity }}
+                            <br>
+                            Size: {% if item.product.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}
+                        </div>
+                    </li>
+                    {% endfor %}
+                    <li class="list-group-item">
+                        <strong>Total: </strong>€{{ total }}<br>
+                        <strong>Delivery: </strong>€{{ delivery|floatformat:2 }}<br>
+                        <h4><strong>Grand Total: </strong>€{{ grand_total|floatformat:2 }}</h4>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Complete Order</button>
+    </div>
+</div>
+{% endblock %}
