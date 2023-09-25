@@ -1,29 +1,34 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bag_filters %}
 {% load crispy_forms_filters %}
 {% load crispy_forms_tags %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
 
 {% block content %}
 <div class="container my-5">
     <div class="row">
         <div class="col-12">
             <h1 class="mb-4">Checkout</h1>
+            <hr>
         </div>
     </div>
-    <div class="row">
-        <!-- Checkout Form -->
-        <div class="col-lg-8">
-            <form method="post" action="{% url 'checkout' %}">
-                {% csrf_token %}
-
-                <fieldset>
+    <form method="post" action="{% url 'checkout' %}">
+        {% csrf_token %}
+        <div class="row">
+            <!-- Checkout Form -->
+            <div class="col-lg-8">
+                <fieldset class="mb-4">
                     <legend>Details</legend>
                     {{ order_form.full_name|as_crispy_field }}
                     {{ order_form.email|as_crispy_field }}
                     {{ order_form.phone_number|as_crispy_field }}
                 </fieldset>
 
-                <fieldset>
+                <fieldset class="mb-4">
                     <legend>Delivery</legend>
                     {{ order_form.address1|as_crispy_field }}
                     {{ order_form.address2|as_crispy_field }}
@@ -32,41 +37,59 @@
                     {{ order_form.country|as_crispy_field }}
                     {{ order_form.county|as_crispy_field }}
                 </fieldset>
-            </form>
-        </div>
 
-        <!-- Summary & Total -->
-        <div class="col-lg-4">
-            <div class="card">
-                <div class="card-header">
-                    Order Summary
+                <fieldset class="mb-4">
+                    <legend class="fieldset-label w-auto">Payment</legend>
+                    <!-- A Stripe card element will go here -->
+                    <div class="mb-3 p-2 border rounded" id="card-element"></div>
+                    <!-- Used to display form errors -->
+                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    <!-- Pass the client secret to the view so we can get the payment intent id -->
+                    <input type="hidden" name="client_secret" value="{{ client_secret }}">
+                </fieldset>
+            </div>
+
+            <!-- Summary & Total -->
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Order Summary
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <!-- Loop through bag items -->
+                        {% for item in bag_items %}
+                        <li class="list-group-item d-flex align-items-center">
+                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="rounded me-3"
+                                width="50" height="50">
+                            <div>
+                                <strong>{{ item.product.name }}</strong><br>
+                                Quantity: {{ item.quantity }}
+                                <br>
+                                Size: {% if item.product.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}
+                            </div>
+                        </li>
+                        {% endfor %}
+                        <li class="list-group-item">
+                            <strong>Total: </strong>€{{ total }}<br>
+                            <strong>Delivery: </strong>€{{ delivery|floatformat:2 }}<br>
+                            <h4><strong>Grand Total: </strong>€{{ grand_total|floatformat:2 }}</h4>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <!-- Loop through bag items -->
-                    {% for item in bag_items %}
-                    <li class="list-group-item d-flex align-items-center">
-                        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="rounded me-3"
-                            width="50" height="50">
-                        <div>
-                            <strong>{{ item.product.name }}</strong><br>
-                            Quantity: {{ item.quantity }}
-                            <br>
-                            Size: {% if item.product.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}
-                        </div>
-                    </li>
-                    {% endfor %}
-                    <li class="list-group-item">
-                        <strong>Total: </strong>€{{ total }}<br>
-                        <strong>Delivery: </strong>€{{ delivery|floatformat:2 }}<br>
-                        <h4><strong>Grand Total: </strong>€{{ grand_total|floatformat:2 }}</h4>
-                    </li>
-                </ul>
+            </div>
+            <div class="col-12 text-center mb-4">
+                <button type="submit" class="btn btn-primary mb-2">Complete Checkout<i class="fa-solid fa-lock"></i></button>
+                <br>
+                <a href="{% url 'view_bag' %}" class="btn btn-second">Return to Shopping Bag</a>
             </div>
         </div>
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary">Complete Order</button>
-            <a href="{% url 'view_bag' %}" class="btn btn-secondary">Return to Shopping Bag</a>
-        </div>
-    </div>
+    </form>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
