@@ -78,12 +78,20 @@
                 </div>
             </div>
             <div class="col-12 text-center mb-4">
-                <button type="submit" id="submit-button" class="btn btn-primary mb-2">Complete Checkout<i class="fa-solid fa-lock"></i></button>
+                <button type="submit" id="submit-button" class="btn btn-primary mb-2">Complete Checkout<i
+                        class="fa-solid fa-lock"></i></button>
                 <br>
                 <a href="{% url 'view_bag' %}" class="btn btn-second">Return to Shopping Bag</a>
             </div>
         </div>
     </form>
+</div>
+<div id="spinner-overlay">
+    <div class="text-success spinner">
+        <span class="icon">
+            <i class="fas fa-3x fa-smile fa-spin"></i>
+        </span>
+    </div>
 </div>
 {% endblock %}
 
