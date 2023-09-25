@@ -16,7 +16,7 @@
             <hr>
         </div>
     </div>
-    <form method="post" action="{% url 'checkout' %}">
+    <form method="post" action="{% url 'checkout' %}" id="payment-form">
         {% csrf_token %}
         <div class="row">
             <!-- Checkout Form -->
@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="col-12 text-center mb-4">
-                <button type="submit" class="btn btn-primary mb-2">Complete Checkout<i class="fa-solid fa-lock"></i></button>
+                <button type="submit" id="submit-button" class="btn btn-primary mb-2">Complete Checkout<i class="fa-solid fa-lock"></i></button>
                 <br>
                 <a href="{% url 'view_bag' %}" class="btn btn-second">Return to Shopping Bag</a>
             </div>
