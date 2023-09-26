@@ -40,3 +40,9 @@
   margin: 0;
   height: 100%;
 }
+
+select,
+select option {
+    color: #000000 !important;
+}
+
