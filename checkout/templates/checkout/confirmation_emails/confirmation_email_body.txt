@@ -1,0 +1,24 @@
+Hello {{ order.full_name }},
+
+We're thrilled to confirm your recent purchase at Drew's Coffee! Please find your order details below:
+
+#### Order Summary:
+- **Order Number:** {{ order.order_number }}
+- **Order Date:** {{ order.date }}
+
+#### Payment Summary:
+- **Order Total:** ${{ order.order_total }}
+- **Delivery Charges:** ${{ order.delivery_cost }}
+- **Grand Total:** ${{ order.grand_total }}
+
+#### Shipping Information:
+Your coffee delights will be sent to {{ order.address1 }}, {{ order.town_city }}, {{ order.country }}.
+
+We've also saved your phone number as {{ order.phone_number }} in case we need to reach out regarding your order.
+
+If you have any queries or need further assistance, don't hesitate to reach out to us at {{ contact_email }}.
+
+Thanks a latte for choosing Drew's Coffee!
+
+Warm regards,
+The Drew's Coffee Team
