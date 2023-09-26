@@ -4,56 +4,60 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container">
+<div class="container mt-5">
     <div class="row">
-        <!-- User Information Section -->
+        <!-- User Information -->
         <div class="col-md-6">
-            <h2 class="mb-4">User Profile</h2>
-            <p class="text-muted">Default Delivery Information</p>
-            <!-- User Profile Update Form -->
-            <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <button class="btn btn-primary">Update Information</button>
-            </form>
-        </div>
-
-        <!-- Order History Section -->
-        <div class="col-md-6">
-            <h2 class="mb-4">Order History</h2>
-            {% for order in user_orders %}
-            <div class="card mb-3">
+            <div class="card">
                 <div class="card-header">
-                    <strong>Order ID:</strong> {{ order.id }}<br>
-                    <strong>Date:</strong> {{ order.date|date:"d M Y" }}
+                    <h4>User Profile</h4>
                 </div>
                 <div class="card-body">
-                    {% for item in order.lineitems.all %}
-                    <div class="row align-items-center mb-2">
-                        <div class="col-2">
-                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}"
-                                class="img-fluid rounded" style="max-width: 50px;">
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <p class="mb-0 text-black font-weight-bold">{{ item.product.name }}</p>
-                        </div>
-                        <div class="col-4 col-md-6 text-md-right">
-                            <p class="mb-0">Quantity: {{ item.quantity }} <br>
-                                €{{ item.product.price }}
-                                {% if item.product_size %}
-                                <br> - Size {{ item.product_size|upper }}
-                                {% endif %}
-                            </p>
-                        </div>
-                    </div>
-                    {% endfor %}
+                    <form action="{% url 'profile' %}" method="POST" id="profile-form">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button type="submit" class="btn btn-success mt-2">Update Information</button>
+                    </form>
                 </div>
             </div>
-            {% endfor %}
+        </div>
+
+        <!-- Order History -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Order History</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Order Number</th>
+                                    <th>Date</th>
+                                    <th>Total Items</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order in orders %}
+                                <tr>
+                                    <td><a href="{% url 'order_detail' order.id %}">{{ order.id }}</a></td>
+                                    <td>{{ order.date }}</td>
+                                    <td>{{ order.items.count }}</td>
+                                    <td>{{ order.total_amount }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 {% endblock %}
+
 
 
 {% block postloadjs %}
