@@ -62,13 +62,13 @@
 
                     <!-- Card Footer -->
                     <div class="card-footer">
-                        <small class="text-muted"><i class="fa-regular fa-star text-warning"></i>Rating: {{ product.rating }}</small>
+                        <small class="text-muted"><i class="fa-regular fa-star text-warning"></i>Rating:
+                            {{ product.rating }}</small>
 
                         <!-- View & Add to Bag Buttons -->
                         <div class="mt-2">
                             <a href="{% url 'product_detail' product.id %}" class="btn btn-primary btn-sm">View
                                 Details</a>
-                            <a href="{% url 'add_to_bag' product.id %}" class="btn btn-second btn-sm">Add to Bag</a>
                         </div>
                     </div>
                 </div>
