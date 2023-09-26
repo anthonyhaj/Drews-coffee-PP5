@@ -40,19 +40,36 @@
             {% for product in products %}
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
+                    <!-- Product Image -->
                     {% if product.image and product.image.url %}
                     <img src="{{ product.image.url }}" alt="{{ product.name }}" />
                     {% else %}
                     <img src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
                     {% endif %}
+
+                    <!-- Product Info -->
                     <div class="card-body">
                         <h4 class="card-title">
                             <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
                         </h4>
                         <h5>€{{ product.price }}</h5>
+
+                        <!-- Edit & Remove Links -->
+                        <a href="{% url 'edit_product' product.id %}" class="text-info">Edit</a>
+                        |
+                        <a href="" class="text-danger">Remove</a>
                     </div>
+
+                    <!-- Card Footer -->
                     <div class="card-footer">
-                        <small class="text-muted">Rating: {{ product.rating }}</small>
+                        <small class="text-muted"><i class="fa-regular fa-star text-warning"></i>Rating: {{ product.rating }}</small>
+
+                        <!-- View & Add to Bag Buttons -->
+                        <div class="mt-2">
+                            <a href="{% url 'product_detail' product.id %}" class="btn btn-primary btn-sm">View
+                                Details</a>
+                            <a href="{% url 'add_to_bag' product.id %}" class="btn btn-second btn-sm">Add to Bag</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -63,26 +80,6 @@
             </div>
             {% endif %}
         </div>
-
-        {% endblock %}
-
-        {% block postloadjs %}
-        {{ block.super }}
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const sortSelector = document.getElementById("sort_by");
-                const currentSort = new URLSearchParams(window.location.search).get('sort_by');
-
-                if (currentSort) {
-                    sortSelector.value = currentSort;
-                }
-
-                sortSelector.addEventListener("change", function () {
-                    const selectedOption = this.value;
-                    let url = new URL(window.location.href);
-                    url.searchParams.set('sort_by', selectedOption);
-                    window.location.href = url;
-                });
-            });
-        </script>
-        {% endblock %}
+    </div>
+</div>
+{% endblock %}

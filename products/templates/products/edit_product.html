@@ -2,7 +2,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-{% block title %}Product Management{% endblock %}
+{% block title %}Edit Product{% endblock %}
 
 {% block extracss %}
 <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
@@ -12,7 +12,7 @@
 <div class="container header-container">
     <div class="row">
         <div class="col text-center">
-            <h1 class="logo-font">Product Management</h1>
+            <h1 class="logo-font">Edit Product</h1> <!-- Changed from "Product Management" -->
         </div>
     </div>
 </div>
@@ -23,7 +23,7 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-12 col-md-8 mx-auto">
-            <h2 class="logo-font mb-4">Add a New Product</h2>
+            <h2 class="logo-font mb-4">Edit Existing Product</h2> <!-- Changed from "Add a New Product" -->
             <hr>
 
             <form method="post" enctype="multipart/form-data" class="mb-2">
@@ -39,7 +39,8 @@
                 {% endfor %}
                 <div class="text-right">
                     <a href="{% url 'products' %}" class="btn btn-outline-secondary rounded-0">Cancel</a>
-                    <button type="submit" class="btn btn-primary rounded-0">Add Product</button>
+                    <button type="submit" class="btn btn-primary rounded-0">Save Changes</button>
+                    <!-- Changed from "Add Product" -->
                 </div>
             </form>
         </div>
