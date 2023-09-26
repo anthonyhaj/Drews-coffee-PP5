@@ -16,8 +16,8 @@ from .models import Order, OrderLineItem
 from products.models import Product, Category
 from bag.contexts import bag_contents
 from bag.templatetags import bag_filters
-
-
+from profiles.models import UserProfile
+from profiles.forms import UserProfileForm
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 @require_POST
@@ -120,12 +120,31 @@ def checkout(request):
 
     return render(request, template, context)
 
+
 def checkout_success(request, order_number):
     """
     Handle successful checkouts
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+
+    profile = get_object_or_404(UserProfile, user=request.user)
+
+    # Save the user's info
+    if save_info:
+        profile_data = {
+            'default_phone_number': order.phone_number,
+            'default_country': order.country,
+            'default_postcode': order.postcode,
+            'default_town_city': order.town_city,
+            'default_address1': order.address1,
+            'default_address2': order.address2,
+            'default_county': order.county,
+        }
+        user_profile_form = UserProfileForm(profile_data, instance=profile)
+        if user_profile_form.is_valid():
+            user_profile_form.save()
+
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')

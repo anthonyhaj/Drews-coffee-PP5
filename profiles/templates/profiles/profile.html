@@ -16,7 +16,7 @@
                     <form action="{% url 'profile' %}" method="POST" id="profile-form">
                         {% csrf_token %}
                         {{ form|crispy }}
-                        <button type="submit" class="btn btn-success mt-2">Update Information</button>
+                        <button type="submit" class="btn btn-primary mt-2">Update Information</button>
                     </form>
                 </div>
             </div>
@@ -42,10 +42,16 @@
                             <tbody>
                                 {% for order in orders %}
                                 <tr>
-                                    <td><a href="{% url 'order_detail' order.id %}">{{ order.id }}</a></td>
+                                    <td><a
+                                            href="{% url 'order_history' order.order_number %}">{{ order.order_number }}</a>
+                                    </td>
                                     <td>{{ order.date }}</td>
                                     <td>{{ order.items.count }}</td>
-                                    <td>{{ order.total_amount }}</td>
+                                    <td>{{ order.grand_total }}</td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="4">No orders found.</td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
@@ -57,7 +63,6 @@
     </div>
 </div>
 {% endblock %}
-
 
 
 {% block postloadjs %}
