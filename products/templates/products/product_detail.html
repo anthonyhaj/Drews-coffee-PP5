@@ -6,9 +6,16 @@
     <div class="row">
         <!-- Product Image -->
         <div class="col-lg-6">
+            {% if product.image and product.image.url %}
             <a href="{{ product.image.url }}" target="_blank">
                 <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid">
             </a>
+            {% else %}
+            <a href="{{ MEDIA_URL }}noimage.jpg" target="_blank">
+                <img src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}" class="img-fluid">
+            </a>
+            {% endif %}
+
         </div>
         <!-- Product Details -->
         <div class="col-lg-6">

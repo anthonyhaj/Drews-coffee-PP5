@@ -20,8 +20,11 @@
                     <li class="mb-4">
                         <div style="display: flex; flex-wrap: wrap;">
                             <div style="flex: 1;">
-                                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid"
-                                    style="max-width: 100px;">
+                                    {% if item.product.image %}
+                                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-fluid" style="max-width: 100px;">
+                                    {% else %}
+                                    <img src="{{ MEDIA_URL }}noimage.jpg" alt="{{ item.product.name }}" class="img-fluid" style="max-width: 100px;">
+                                    {% endif %}
                             </div>
                             <div style="flex: 2;">
                                 <strong>{{ item.product.name }}</strong><br>

@@ -43,7 +43,7 @@
                     {% if product.image and product.image.url %}
                     <img src="{{ product.image.url }}" alt="{{ product.name }}" />
                     {% else %}
-                    <img src="{% static 'img/logo.png' %}" alt="">
+                    <img src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
                     {% endif %}
                     <div class="card-body">
                         <h4 class="card-title">
