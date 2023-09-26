@@ -1,4 +1,7 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container">
@@ -50,4 +53,10 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'profiles/js/country_field.js' %}"></script>
 {% endblock %}
