@@ -12,10 +12,16 @@ from checkout.webhook_handler import StripeWH_Handler
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+# CI Boutique Ado webhooks.py
+@require_POST
+@csrf_exempt
 def webhook(request):
-    stripe_public_key = settings.STRIPE_PUBLIC_KEY
-    stripe_secret_key = settings.STRIPE_SECRET_KEY
+    """Listen for webhooks from Stripe"""
+    # Setup
+    wh_secret = settings.STRIPE_WH_SECRET
+    stripe.api_key = settings.STRIPE_SECRET_KEY
 
+    # Get the webhook data and verify its signature
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
     event = None
@@ -26,7 +32,7 @@ def webhook(request):
         # Invalid payload
         return HttpResponse(status=400)
     except stripe.error.SignatureVerificationError as e:
-        # Invalid sig
+        # Invalid signature
         return HttpResponse(status=400)
     except Exception as e:
         return HttpResponse(content=e, status=400)
