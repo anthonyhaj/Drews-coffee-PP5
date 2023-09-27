@@ -949,3 +949,259 @@ Performance, best practices and SEO was tested using Lighthouse.
 ## Testing
 
 ### Manual testing
+
+1. As a Shopper I can use a navbar, footer, and social icons so that I can easily navigate the site
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Click any link in the navigation bar | Link chosen will load | Works as expected |
+| Click on the footer links  | link pages will open in new tab | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory1a.png">
+<img src="docs/testing/userstory1b.png">
+</details>
+<br>
+<hr>
+
+2. As a **User**, I want to **be able to contact the business using a form** so that **the business can see my contact information and message**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Click any the Contact Us link in the navigation bar | Contact page will load showing contact form | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory2.png">
+</details>
+<br>
+<hr>
+
+3. 3. As a **User**, I want to see the **restaurant's opening hours and location** so that I can **plan my visit.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Click any the Contact Us link in the navigation bar and scroll to the bottom to view additional information | Find business information on the page | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory3.png">
+</details>
+<br>
+<hr>
+
+4. As a **User**, I want to see the **menu page** so that **I can explore the dishes offered by the restaurant**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Click any the Menu link in the navigation bar | See the full food and drink menu sorted by type from the database | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory4.png">
+</details>
+<br>
+<hr>
+
+5. As a **User**, I want to **create an account** so that **I can make a booking.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Click any the Register link in the navigation bar | Register page will load with register form | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory5.png">
+</details>
+<br>
+<hr>
+
+6. As a **User**, I want to **log in to my account** to **manage my bookings and personal details.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Click any the Login link in the navigation bar | Login page will load with Login form | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory6.png">
+</details>
+<br>
+<hr>
+
+7. As a **User**, I want to **see my login status (logged in or logged out) and who I am logged in as (username or email) displayed on the website**, so I can **easily understand my current session status**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Given user is logged in, username will show in nav bar showing logged in status | "Logged in as: " will show in the nav bar when logged in | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory7.png">
+</details>
+<br>
+<hr>
+
+8. As a **User**, I want to **book a table** so that **I can ensure I have a place at a convenient time.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Given user is logged in, click on Book a Table in the nav bar | If logged in shows a book a table form otherwise asks user to log in in order to book | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory8a.png">
+<img src="docs/testing/userstory8b.png">
+</details>
+<br>
+<hr>
+
+9. As a **User**, I cannot **choose a past date while booking** so that **a booking is on a valid date**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Given user is logged in, click on Book a Table in the nav bar | Booking form will load | Works as expected |
+| Fill in booking information | Error will appear when trying to submit form | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory9.png">
+</details>
+<br>
+<hr>
+
+10. As a **User**, I am **notified** so that **I know my booking has been booked successfully**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Given user is logged in, click on Book a Table in the nav bar | Booking form will load | Works as expected |
+| Fill in booking information | Fill form | Works as expected |
+| Click on the book button | Submits form redirects user to a success page with buttons | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory10a.png">
+<img src="docs/testing/userstory10b.png">
+</details>
+<br>
+<hr>
+
+11. As a **User**, I want to **be able to view a booking I have already made** so that **I can see my booking information**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Given user is logged in, click on My Bookings in the nav bar | My Booking page will load | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory11.png">
+</details>
+<br>
+<hr>
+
+12. As a **User**, I want to **modify my booking details (like time, date, or number of guests)** so that I can **change my plans if needed.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Given user is logged in, click on My Bookings in the nav bar | My Booking page will load | Works as expected |
+| Click on the change button on a booking | Change booking page will load with pre-filled form | Works as expected |
+| Click on the Saves Changes button | Saves changes and redirects to My Bookings page | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory12a.png">
+<img src="docs/testing/userstory12b.png">
+</details>
+<br>
+<hr>
+
+13. As a **User**, I am **notified when changing my booking information** so that **I know it has been changed successfully**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Given user is logged in, click on My Bookings in the nav bar | My Booking page will load | Works as expected |
+| Click on the change button on a booking | Change booking page will load with pre-filled form | Works as expected |
+| Click on the Saves Changes button | Saves changes and redirects to My Bookings page and success message is shown to the user | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory13.png">
+</details>
+<br>
+<hr>
+
+14. As a **User**, I want to **be able to cancel a booking that I have made**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Given user is logged in, click on My Bookings in the nav bar | My Booking page will load | Works as expected |
+| Click on the cancel button on a booking | Cancel booking page will load asking if user would like to delete booking | Works as expected |
+| Click on the Yes, Delete button | Saves changes and redirects to My Bookings page and success message is shown to the user | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory14a.png">
+<img src="docs/testing/userstory14b.png">
+<img src="docs/testing/userstory14c.png">
+</details>
+<br>
+<hr>
+
+15. As a **User**, I want **know if I have successfully logged out of my account** 
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Given user is logged in, click on Logout in the nav bar | A Logout confirmation page will load | Works as expected |
+| Click on the Logout button to Logout | Logs user out and redirects to a success page with button | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory15a.png">
+<img src="docs/testing/userstory15b.png">
+<img src="docs/testing/userstory15c.png">
+</details>
+<br>
+<hr>
+
+16. As an **Admin**, I want to **be able to log in to the admin interface** so that **I can interact with my app data.**
+15. As a **User**, I want **know if I have successfully logged out of my account** 
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Visit the admin page https://strand-pp4-d640c87ff185.herokuapp.com/admin/  | Admin page Login will load | Works as expected |
+| Enter admin login username and password | Logs user into the django admin database | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory16.png">
+</details>
+<br>
+<hr>
+
+17. As a **Admin**, I want to **confirm or reject online booking requests** so that **I can manage the restaurant's seating capacity.**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Visit the admin page https://strand-pp4-d640c87ff185.herokuapp.com/admin/  | Admin page Login will load | Works as expected |
+| Click on Bookings and choose one to view | Loads page containing all bookings made | Works as expected |
+| Click Status to change status and click save | Changes booking status for the user | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory17a.png">
+<img src="docs/testing/userstory17b.png">
+<img src="docs/testing/userstory17c.png">
+</details>
+<br>
+<hr>
+
+18. As an **Admin**, I want to be able to **create, update, read, and delete** the menu items so that **customers can see current menu and prices**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Visit the admin page https://strand-pp4-d640c87ff185.herokuapp.com/admin/  | Admin page Login will load | Works as expected |
+| Click on Food Items or Drink Items  and choose one to view | Loads page containing all Food or Drink items made | Works as expected |
+| Click on add Food or Drink Item or checkboxes to delete items | Create or delete a new menu item | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory18a.png">
+<img src="docs/testing/userstory18b.png">
+</details>
+<br>
+<hr>
+
+19. As a **Admin**, I want to **see when a user has submited a contact form with user information and message** so that **I can contact the user**
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Visit the admin page https://strand-pp4-d640c87ff185.herokuapp.com/admin/  | Admin page Login will load | Works as expected |
+| Click on Contact | Loads page containing all contact forms submitted | Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/userstory19a.png">
+<img src="docs/testing/userstory19b.png">
+</details>
