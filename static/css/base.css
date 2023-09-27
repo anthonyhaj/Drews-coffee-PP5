@@ -37,6 +37,10 @@ a {
     text-decoration: none;
 }
 
+.bg-custom {
+    background-color: #c7a17a !important;;
+}
+
 .fa-lock {
     color: #fff !important;
     margin-left: 5px;
