@@ -54,7 +54,8 @@
                         <input class="form-control custom-search custom-search-md" type="text" name="q"
                             placeholder="Search" aria-label="Search">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-primary custom-button custom-button-md" type="submit">
+                            <button class="btn btn-outline-primary custom-button custom-button-md" type="submit"
+                                aria-label="Search button">
                                 <i class="fas fa-search i-w"></i>
                             </button>
                         </div>
@@ -63,7 +64,7 @@
 
                 <!-- Shopping bag icon for medium and large devices -->
                 <div class="navbar-icon-link d-none d-md-block d-sm-none">
-                    <a href="{% url 'view_bag' %}">
+                    <a href="{% url 'view_bag' %}" aria-label="Shopping bag button">
                         <i class="fas fa-shopping-bag pad-c"></i>
                     </a>
                     <p class="my-0 total-c">
@@ -130,7 +131,8 @@
                             <input class="form-control custom-search mr-sm-2" type="search" placeholder="Search"
                                 name="q" aria-label="Search">
                             <div class="input-group-append">
-                                <button class="btn btn-outline-primary custom-button my-2 my-sm-0" type="submit">
+                                <button class="btn btn-outline-primary custom-button my-2 my-sm-0" type="submit"
+                                    aria-label="Search bar">
                                     <i class="fas fa-search i-w"></i>
                                 </button>
                             </div>
@@ -140,7 +142,7 @@
                     <!-- Shopping bag icon for small devices -->
                     <li class="nav-item">
                         <div class="d-md-none">
-                            <a class="nav-link" href="{% url 'view_bag' %}">
+                            <a class="nav-link" href="{% url 'view_bag' %}" aria-label="Shopping bag button">
                                 <i class="fas fa-shopping-bag"></i>
                             </a>
                             <p class="my-0 total-c">
@@ -156,7 +158,8 @@
 
                     <li class="nav-item dropdown d-md-none">
                         <a class="nav-link dropdown-toggle" href="#" id="smallProfileDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            aria-label="Profile dropdown">
                             <i class="fas fa-user"></i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="smallProfileDropdown">
@@ -201,7 +204,8 @@
                             <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email"
                                 required>
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="submit">Subscribe</button>
+                                <button class="btn btn-primary" type="submit"
+                                    aria-label="Subscribe button">Subscribe</button>
                             </div>
                         </div>
                     </form>
@@ -228,14 +232,17 @@
                 <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0 text-center text-md-start">
                     <h4 class="text-uppercase text-black">Connect With Us</h4>
                     <div class="social-buttons">
-                        <a href="#" class="btn btn-outline-dark btn-social mx-1">
+                        <a href="https://github.com/anthonyhaj/drews-coffee-PP5"
+                            class="btn btn-outline-dark btn-social mx-1" aria-label="Github page link">
                             <i class="fab fa-github text-black"></i>
                         </a>
-                        <a href="#" class="btn btn-outline-dark btn-social mx-1">
+                        <a href="https://www.facebook.com/profile.php?id=61551717157784"
+                            class="btn btn-outline-dark btn-social mx-1" aria-label="Facebook page link">
                             <i class="fab fa-facebook text-black"></i>
                         </a>
-                        <a href="#" class="btn btn-outline-dark btn-social mx-1">
-                            <i class="fab fa-instagram text-black"></i>
+                        <a href="https://www.instagram.com/drewscoffee1/" class="btn btn-outline-dark btn-social mx-1"
+                            aria-label="Instagram page link"></a>>
+                        <i class="fab fa-instagram text-black"></i>
                         </a>
                     </div>
                 </div>
