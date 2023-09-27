@@ -568,7 +568,120 @@ The W3C Markup Validation Service was used to validate the HTML of the website.
 ### Product Detail
 
 <details><summary>See Image</summary>
-<img src="docs/validation/html-products.png">
+<img src="docs/validation/html-product-detail.png">
 </details>
 
 - No Errors Found
+
+### Add Product
+
+<details><summary>See Image</summary>
+<img src="docs/validation/html-add-product.png">
+</details>
+
+- No Errors Found
+
+### Edit Product
+
+<details><summary>See Image</summary>
+<img src="docs/validation/html-edit-product.png">
+</details>
+
+- No Errors Found
+
+### Shopping Bag
+
+<details><summary>See Image</summary>
+<img src="docs/validation/html-bag.png">
+</details>
+
+- No Errors Found
+
+### Checkout
+
+<details><summary>See Image</summary>
+<img src="docs/validation/html-checkout.png">
+</details>
+
+- No Errors Found
+
+
+### Checkout Success
+
+<details><summary>See Image</summary>
+<img src="docs/validation/html-checkout-success.png">
+</details>
+
+- No Errors Found
+
+
+### Profile
+
+<details><summary>See Image</summary>
+<img src="docs/validation/html-profile.png">
+</details>
+
+- No Errors Found
+
+### Blog
+
+<details><summary>See Image</summary>
+<img src="docs/validation/html-blog.png">  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+</details>
+
+- No Errors Found
+
+### Contact
+
+<details><summary>See Image</summary>
+<img src="docs/validation/html-contact.png">
+</details>
+
+- No Errors Found
+
+
+### Login
+
+<details><summary>See Image</summary>
+<img src="docs/validation/html-login.png">
+</details>
+
+- No Errors Found
+
+### Logout
+
+<details><summary>See Image</summary>
+<img src="docs/validation/html-logout.png">
+</details>
+
+- No Errors Found
+
+### Register
+
+<details><summary>See Image</summary>
+<img src="docs/validation/html-register.png">
+</details>
+
+- No Errors Found
+
+### 404 Page
+
+<details><summary>See Image</summary>
+<img src="docs/validation/html-404.png">
+</details>
+
+- No Errors Found
+
+### CSS Validation
+
+<details><summary>base.css</summary>
+<img src="docs/validation/css-base.png">
+</details>
+
+<details><summary>products.css</summary>
+<img src="docs/validation/css-products.png">
+</details>
+
+<details><summary>checkout.css</summary>
+<img src="docs/validation/css-checkout.png">
+</details>
