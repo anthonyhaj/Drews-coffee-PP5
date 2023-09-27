@@ -715,17 +715,88 @@ JSHint Validation Service was used to validate all javaScript files.
 <details><summary>contexts.py</summary>
 <img src="docs/validation/pep8-bag-contexts.png">
 </details>
-
 <details><summary>bag_filters.py</summary>
 <img src="docs/validation/pep8-bag-baglfilters.png">
 </details>
-
 <details><summary>views.py</summary>
 <img src="docs/validation/pep8-bag-views.png">
 </details>
-
 <details><summary>urls.py</summary>
 <img src="docs/validation/pep8-bag-urls.png">
 </details>
 
-### Bag
+### Checkout
+
+<details><summary>admin.py</summary>
+<img src="docs/validation/pep8-checkout-admin.png">
+</details>
+<details><summary>forms.py</summary>
+<img src="docs/validation/pep8-checkout-forms.png">
+</details>
+<details><summary>model.py</summary>
+<img src="docs/validation/pep8-checkout-models.png">
+</details>
+<details><summary>signals.py</summary>
+<img src="docs/validation/pep8-checkout-signals.png">
+</details>
+<details><summary>urls.py</summary>
+<img src="docs/validation/pep8-checkout-urls.png">
+</details>
+<details><summary>views.py</summary>
+<img src="docs/validation/pep8-checkout-views.png">
+</details>
+
+### Contact
+
+<details><summary>admin.py</summary>
+<img src="docs/validation/pep8-contact-admin.png">
+</details>
+<details><summary>forms.py</summary>
+<img src="docs/validation/pep8-contact-forms.png">
+</details>
+<details><summary>model.py</summary>
+<img src="docs/validation/pep8-contact-models.png">
+</details>
+<details><summary>urls.py</summary>
+<img src="docs/validation/pep8-contact-urls.png">
+</details>
+<details><summary>views.py</summary>
+<img src="docs/validation/pep8-contact-views.png">
+</details>
+
+### Home
+
+<details><summary>urls.py</summary>
+<img src="docs/validation/pep8-home-urls.png">
+</details>
+<details><summary>views.py</summary>
+<img src="docs/validation/pep8-home-views.png">
+</details>
+
+### Products
+
+<details><summary>admin.py</summary>
+<img src="docs/validation/pep8-products-admin.png">
+</details>
+<details><summary>forms.py</summary>
+<img src="docs/validation/pep8-products-forms.png">
+</details>
+<details><summary>model.py</summary>
+<img src="docs/validation/pep8-products-models.png">
+</details>
+<details><summary>urls.py</summary>
+<img src="docs/validation/pep8-products-urls.png">
+</details>
+<details><summary>views.py</summary>
+<img src="docs/validation/pep8-products-views.png">
+</details>
+<details><summary>widgets.py</summary>
+<img src="docs/validation/pep8-products-widgets.png">
+</details>
+
+### Blog
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+<details><summary>admin.py</summary>
+<img src="docs/validation/pep8-products-admin.png"> 
+</details>
