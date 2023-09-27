@@ -217,4 +217,45 @@ The site was structured using a basic logo and navigation layout showing all rel
  and hamburger menu for smaller devices. The footer consists of 3 social media links and 
 email sign up form and useful links as well as contact information.
 
+## Website pages
 
+- The site consists of the following pages:
+  - Home
+  - Products
+  - Product Detail
+  - Bag
+  - Checkout
+  - Checkout Success
+  - Blog
+  - Blog Detail
+  - Contact
+  - Login
+  - Register
+  - Profile
+  - Logout
+  - Reset Password
+  - 404 Page
+
+## AWS 
+
+I am using AWS S3 buckets to store my data. It is a cloud storage service provided by Amazon
+Web Services. 
+
+<details><summary>See Color Palette</summary>
+<img src="docs/agile/colors.png">
+</details><details><summary>See Color Palette</summary>
+<img src="docs/agile/colors.png">
+</details>
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+## Database
+
+I built my database using PostgreSQL. I have opted for PostgreSQL as my database
+ management system, owing to its robust, reliable, and high-performing open-source
+ architecture. It serves as a versatile platform for adeptly handling and structuring
+ my data.
+
+<details><summary>See Database Schema</summary>
+<img src="docs/database.png">
+</details>
