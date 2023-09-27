@@ -78,6 +78,8 @@ Drew's Coffee maintains active Facebook and Instagram accounts to engage with ou
 ### Mailing List
 Drew's Coffee leverages Mailchimp to manage our mailing list effectively. Subscribers receive bi-weekly newsletters containing exclusive promotions, updates on new coffee releases, and curated content related to coffee culture. This mailing list serves as a direct channel of communication to our most engaged customers, and analytics from Mailchimp assist us in optimizing the content and timing of these communications to enhance user engagement and drive sales
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 ## User Goals
 
 - General: Easy navigation, accurate information
@@ -190,7 +192,29 @@ The primary target audience for Drew's Coffee consists of coffee enthusiasts spa
 <img src="docs/agile/user-stories3.png">
 </details>
 
+## Design
 
+### Colors
 
+Colors chosen for were a creamy brown and darker brown color representing coffee with a 
+light theme.
+
+<details><summary>See Color Palette</summary>
+<img src="docs/colors.png">
+</details>
+
+### Fonts 
+
+The fonts selected were from Google Fonts.
+
+<details><summary>See Fonts</summary>
+<img src="docs/agile/fonts.png">
+</details>
+
+# Structure
+
+The site was structured using a basic logo and navigation layout showing all relevant links
+ and hamburger menu for smaller devices. The footer consists of 3 social media links and 
+email sign up form and useful links as well as contact information.
 
 
