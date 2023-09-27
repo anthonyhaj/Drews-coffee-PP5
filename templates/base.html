@@ -45,7 +45,6 @@
             <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'img/logo.png' %}" alt="Logo" style="width:100px;">
             </a>
-
             <div class="d-flex align-items-center">
                 <!-- Search bar for medium and large devices -->
                 <form class="form-inline ml-auto d-none d-lg-flex align-items-center" method="GET"
@@ -60,7 +59,6 @@
                         </div>
                     </div>
                 </form>
-
                 <!-- Shopping bag icon for medium and large devices -->
                 <div class="navbar-icon-link d-none d-md-block d-sm-none">
                     <a href="{% url 'view_bag' %}">
@@ -101,7 +99,6 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
@@ -123,7 +120,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
                     </li>
-
                     <!-- Search bar for small devices in hamburger menu -->
                     <li class="nav-item d-lg-none">
                         <form class="form-inline ml-auto" method="GET" action="{% url 'products' %}">
@@ -136,7 +132,6 @@
                             </div>
                         </form>
                     </li>
-
                     <!-- Shopping bag icon for small devices -->
                     <div class="d-md-none">
                         <ul class="navbar-nav">
@@ -156,8 +151,6 @@
                             {% endif %}
                         </p>
                     </div>
-
-
                     <!-- Profile Dropdown for small screens -->
                     <div>
                         <li class="nav-item dropdown d-md-none">
@@ -179,11 +172,11 @@
                             </div>
                         </li>
                     </div>
-
                 </ul>
             </div>
         </div>
     </nav>
+
     <!-- Free delivery banner -->
     <div class="container-fluid custom-banner text-white text-center">
         <p class="mb-custom">Orders more than €{{ free_delivery_threshold }} are eligible for free delivery!</p>
