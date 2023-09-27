@@ -811,6 +811,14 @@ was used to test accessibility across the website.
 - All pages returned 0 errors. 
 
 <details><summary>Home Page</summary>
-<img src="docs/validation/pep8-wave-home.png"> 
+<img src="docs/validation/wave-home.png"> 
+</details>
+
+<details><summary>Products Page</summary>
+<img src="docs/validation/wave-products.png"> 
+</details>
+
+<details><summary>Product Details</summary>
+<img src="docs/validation/wave-productdetail.png"> 
 </details>
 

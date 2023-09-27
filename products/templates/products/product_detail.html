@@ -28,6 +28,7 @@
                 {% csrf_token %}
                 <!-- Quantity Selector -->
                 <div class="input-group mb-3">
+                    <label for="quantity" class="sr-only">Quantity</label> <!-- Add this line -->
                     <div class="input-group-prepend">
                         <button type="button" data-item_id="{{ product.id }}"
                             class="btn btn-outline-secondary decrement-qty">-</button>
@@ -39,13 +40,15 @@
                             class="btn btn-outline-secondary increment-qty">+</button>
                     </div>
                 </div>
+                <label for="redirect_url" class="sr-only">Redirect URL</label> <!-- Add this line -->
+                <input type="hidden" name="redirect_url" id="redirect_url" value="{{ request.path }}">
 
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 <button type="submit" class="btn btn-primary btn-lg">Add to Shopping Bag</button>
             </form>
+
             <!-- Keep Shopping Button -->
             <div class="mt-2 align-c">
-                <a href="{% url 'products' %}" class="btn btn-secondary btn-lg ml-2" role="button">Keep Shopping</a>
+                <a href="{% url 'products' %}" class="btn btn-second btn-lg ml-2" role="button">Keep Shopping</a>
             </div>
         </div>
     </div>
