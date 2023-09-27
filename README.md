@@ -544,3 +544,15 @@ search engines in contextualizing the webpage and aligning it with related searc
 <details><summary>See Feature</summary>
 <img src="docs/features/feature-contact.png">
 </details>
+
+## HTML Validation
+
+The W3C Markup Validation Service was used to validate the HTML of the website.
+
+### Home   
+
+<details><summary>See Image</summary>
+<img src="docs/validation/html-home.png">
+</details>
+
+- No Errors Found
