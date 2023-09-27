@@ -31,5 +31,3 @@ class ContactForm(forms.ModelForm):
         if phone and not phone.is_valid():
             raise forms.ValidationError("Invalid phone number")
         return phone
-
-

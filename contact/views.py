@@ -19,8 +19,8 @@ class ContactView(View):
         if form.is_valid():
             new_contact = form.save(commit=False)
             if request.user.is_authenticated:
-                new_contact.email = request.user.email 
+                new_contact.email = request.user.email
             new_contact.save()
             # Redirect to a new page indicating success
-            return redirect('contact_success')  
+            return redirect('contact_success')
         return render(request, self.template_name, {'form': form})

@@ -36,7 +36,6 @@ card.addEventListener('change', function (event) {
     if (event.error) {
         var html = `
             <span class="icon" role="alert">
-                <i class="fas fa-times"></i>
             </span>
             <span>${event.error.message}</span>
         `;
@@ -55,8 +54,8 @@ form.addEventListener('submit', function (ev) {
         'disabled': true
     });
     $('#submit-button').attr('disabled', true);
-    $('#payment-form').fadeToggle(100);
-    $('#spinner-overlay').fadeToggle(100);
+    $('#payment-form').fadeOut(100);
+    $('#spinner-overlay').fadeIn(100);
 
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
     // From using {% csrf_token %} in the form
@@ -106,20 +105,21 @@ form.addEventListener('submit', function (ev) {
                             </span>
                             <span>${result.error.message}</span>`;
                 $(errorDiv).html(html);
-                $('#payment-form').fadeToggle(100);
-                $('#spinner-overlay').fadeToggle(100);
+                $('#payment-form').fadeIn(100);
+                $('#spinner-overlay').fadeOut(100);
                 card.update({
                     'disabled': false
                 });
                 $('#submit-button').attr('disabled', false);
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
+                    $('#spinner-overlay').fadeOut(100);
                     form.submit();
                 }
             }
         });
     }).fail(function () {
-        // just reload the page, the error will be in django messages
-        location.reload();
+        $('#spinner-overlay').fadeOut(100);
+        location.reload(); // Reload the page, the error will be in django messages
     });
 });

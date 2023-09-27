@@ -674,14 +674,58 @@ The W3C Markup Validation Service was used to validate the HTML of the website.
 
 ### CSS Validation
 
+The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website.
+
 <details><summary>base.css</summary>
 <img src="docs/validation/css-base.png">
 </details>
+
+- No Errors Found
 
 <details><summary>products.css</summary>
 <img src="docs/validation/css-products.png">
 </details>
 
+- No Errors Found
+
 <details><summary>checkout.css</summary>
 <img src="docs/validation/css-checkout.png">
 </details>
+
+- No Errors Found
+
+### JavaScript Validation
+
+JSHint Validation Service was used to validate all javaScript files.
+
+<details><summary>stripe-elements.js</summary>
+<img src="docs/validation/js-stripe-elements.png">
+</details>
+
+<details><summary>quantity-script.js</summary>
+<img src="docs/validation/js-quantity-script.png">
+</details>
+
+- No Errors Found
+
+## PEP8 Validation
+
+### Bag
+
+<details><summary>contexts.py</summary>
+<img src="docs/validation/pep8-bag-contexts.png">
+</details>
+
+<details><summary>bag_filters.py</summary>
+<img src="docs/validation/pep8-bag-baglfilters.png">
+</details>
+
+<details><summary>views.py</summary>
+<img src="docs/validation/pep8-bag-views.png">
+</details>
+
+<details><summary>urls.py</summary>
+<img src="docs/validation/pep8-bag-urls.png">
+</details>
+
+### Bag

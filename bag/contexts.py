@@ -1,7 +1,12 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
+# Internal
 from products.models import Product
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 def bag_contents(request):
@@ -12,7 +17,7 @@ def bag_contents(request):
 
     for item_id, item_data in bag.items():
         product = get_object_or_404(Product, pk=item_id)
-        
+
         if isinstance(item_data, dict) and 'items_by_quantity' in item_data:
             quantity = item_data['items_by_quantity']
             total += quantity * product.price

@@ -20,6 +20,7 @@ from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -57,7 +58,7 @@ def checkout(request):
             'county': request.POST['county'],
         }
         order_form = OrderForm(form_data)
-        
+
         if order_form.is_valid():
             order = order_form.save()
             pid = request.POST.get('client_secret').split('_secret')[0]
@@ -76,24 +77,28 @@ def checkout(request):
                             quantity=quantity,
                         )
                         order_line_item.save()
-                        
+
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
-                        "Please call us for assistance!")
+                        "One of the products in your bag wasn't found \
+                             in our database. ")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse(
+                'checkout_success', args=[order.order_number]
+            ))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(
+                request, "There's nothing in your bag at the moment"
+            )
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -105,7 +110,8 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill the form with any info the user maintains in their profile
+        # Attempt to prefill the form with any info the user maintains
+        # in their profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -180,3 +186,4 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+    
