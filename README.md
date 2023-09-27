@@ -810,11 +810,11 @@ was used to test accessibility across the website.
 
 - All pages returned 0 errors. 
 
-<details><summary>Home Page</summary>
+<details><summary>Home</summary>
 <img src="docs/validation/wave-home.png"> 
 </details>
 
-<details><summary>Products Page</summary>
+<details><summary>Products</summary>
 <img src="docs/validation/wave-products.png"> 
 </details>
 
@@ -822,3 +822,56 @@ was used to test accessibility across the website.
 <img src="docs/validation/wave-productdetail.png"> 
 </details>
 
+<details><summary>Add Product</summary>
+<img src="docs/validation/wave-addproduct.png"> 
+</details>
+
+<details><summary>Edit Product</summary>
+<img src="docs/validation/wave-editproduct.png"> 
+</details>
+
+<details><summary>Bag</summary>
+<img src="docs/validation/wave-bag.png"> 
+</details>
+
+<details><summary>Checkout</summary>
+<img src="docs/validation/wave-checkout.png"> 
+</details>
+
+<details><summary>Checkout</summary>
+<img src="docs/validation/wave-checkout.png"> 
+</details>
+
+<details><summary>Checkout Success</summary>
+<img src="docs/validation/wave-checkoutsuccess.png"> 
+</details>
+
+<details><summary>Contact</summary>
+<img src="docs/validation/wave-contact.png"> 
+</details>
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+<details><summary>Blog</summary>
+<img src="docs/validation/wave-blog.png"> 
+</details>
+
+<details><summary>Profile</summary>
+<img src="docs/validation/wave-profile.png"> 
+</details>
+
+<details><summary>Login</summary>
+<img src="docs/validation/wave-login.png"> 
+</details>
+
+<details><summary>Logout</summary>
+<img src="docs/validation/wave-logout.png"> 
+</details>
+
+<details><summary>Register</summary>
+<img src="docs/validation/wave-register.png"> 
+</details>
+
+<details><summary>404</summary>
+<img src="docs/validation/wave-404.png"> 
+</details>
