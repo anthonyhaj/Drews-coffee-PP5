@@ -794,9 +794,23 @@ JSHint Validation Service was used to validate all javaScript files.
 <img src="docs/validation/pep8-products-widgets.png">
 </details>
 
+- All pages returned 0 errors. 
+
 ### Blog
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 <details><summary>admin.py</summary>
 <img src="docs/validation/pep8-products-admin.png"> 
 </details>
+
+
+## Accessibility 
+The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/)
+was used to test accessibility across the website.  
+
+- All pages returned 0 errors. 
+
+<details><summary>Home Page</summary>
+<img src="docs/validation/pep8-wave-home.png"> 
+</details>
+
