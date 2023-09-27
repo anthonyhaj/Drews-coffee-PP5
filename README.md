@@ -120,9 +120,9 @@ The primary target audience for Drew's Coffee consists of coffee enthusiasts spa
 
 1. As a Shopper I can use a navbar, footer, and social icons so that I can easily navigate the site
 2. As a Shopper I can be notified of my actions so that I can be notified if my action was a success or not
-3. As a Shopper, I want to see my login status (logged in or logged out) and who I am logged in as (username or email) displayed on the website, so I can easily understand my current session status
+3. As a Shopper, I want to see my login status (logged in or logged out) displayed on the website, so I can easily understand my current session status
 4. As a Shopper I can navigate to the shopping pages so that I can view all products available
-5. As a Shopper I can **view product's details so that I can see more information about a product
+5. As a Shopper I can view product's details so that I can see more information about a product
 6. As a Shopper I can view a preview of my cart and grand total at any time so that I can know what I am purchasing and cost
 
 ### User Accounts
@@ -144,7 +144,7 @@ The primary target audience for Drew's Coffee consists of coffee enthusiasts spa
 
 16. As a Shopper I can view products in my cart so that I can review my cart before checkout
 17. As a Shopper I can select the quantity of a product so that I can buy more of a certain product
-18. As a Shopper I can adjust item quantity my basket so that I can add or remove more quantities to my cart
+18. As a Shopper I can adjust item quantity my bag so that I can add or remove more quantities to my bag
 19. As a Shopper I can receive order confirmation so that I can be notified of a successful purchase
 20. As a Shopper I can receive email confirmation so that I can have a receipt of my purchase
 
@@ -958,85 +958,106 @@ Performance, best practices and SEO was tested using Lighthouse.
 | Click on the footer links  | link pages will open in new tab | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory1a.png">
-<img src="docs/testing/userstory1b.png">
+<img src="docs/testing/user-story1a.png">
+<img src="docs/testing/user-story1b.png">
 </details>
 <br>
 <hr>
 
-2. As a **User**, I want to **be able to contact the business using a form** so that **the business can see my contact information and message**
+2. As a Shopper I can be notified of my actions so that I can be notified if my action was a success or not
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| Click any the Contact Us link in the navigation bar | Contact page will load showing contact form | Works as expected |
+| Click any action to trigger a error or success message | When triggered, notification appears | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory2.png">
+<img src="docs/testing/user-story2a.png">
+<img src="docs/testing/user-story2b.png">
 </details>
 <br>
 <hr>
 
-3. 3. As a **User**, I want to see the **restaurant's opening hours and location** so that I can **plan my visit.**
+3. As a Shopper, I want to see my login status (logged in or logged out) displayed on the website, so I can easily understand my current session status
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| Click any the Contact Us link in the navigation bar and scroll to the bottom to view additional information | Find business information on the page | Works as expected |
+| Click any the Profile icon in the navigationbar or hamburger menu | See if logged in | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory3.png">
+<img src="docs/testing/user-story3.png">
 </details>
 <br>
 <hr>
 
-4. As a **User**, I want to see the **menu page** so that **I can explore the dishes offered by the restaurant**
+4. As a Shopper I can navigate to the shopping pages so that I can view all products available
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| Click any the Menu link in the navigation bar | See the full food and drink menu sorted by type from the database | Works as expected |
+| Click any the Shop link in the navigation bar and choose category | Directs user to relevant product list page | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory4.png">
+<img src="docs/testing/user-story4a.png">
+<img src="docs/testing/user-story4b.png">
 </details>
 <br>
 <hr>
 
-5. As a **User**, I want to **create an account** so that **I can make a booking.**
+5. As a Shopper I can view product's details so that I can see more information about a product
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| Click any the Register link in the navigation bar | Register page will load with register form | Works as expected |
+| From the products page click on view product | Product detail page will load | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory5.png">
+<img src="docs/testing/user-story5a.png">
+<img src="docs/testing/user-story5b.png">
 </details>
 <br>
 <hr>
 
-6. As a **User**, I want to **log in to my account** to **manage my bookings and personal details.**
+6. As a Shopper I can view a preview of my cart and grand total at any time so that I can know what I am purchasing and cost
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| Click any the Login link in the navigation bar | Login page will load with Login form | Works as expected |
+| On any product detail page click on add to shopping bag | Item will be added to bag and a preview shown | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory6.png">
+<img src="docs/testing/user-story6a.png">
+<img src="docs/testing/user-story6b.png">
 </details>
 <br>
 <hr>
 
-7. As a **User**, I want to **see my login status (logged in or logged out) and who I am logged in as (username or email) displayed on the website**, so I can **easily understand my current session status**
+7. As a Site User I can login and logout so that I can access my account easily
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| Given user is logged in, username will show in nav bar showing logged in status | "Logged in as: " will show in the nav bar when logged in | Works as expected |
+| On any given page click on the profile icon and choose login or logout | Login page and logout confirm pages load | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory7.png">
+<img src="docs/testing/user-story7a.png">
+<img src="docs/testing/user-story7b.png">
+<img src="docs/testing/user-story7c.png">
+<img src="docs/testing/user-story7d.png">
 </details>
 <br>
 <hr>
 
-8. As a **User**, I want to **book a table** so that **I can ensure I have a place at a convenient time.**
+8. As a Site User I can register for an account so that I can view my profile and orders
+
+**Step** | **Expected Result** | **Actual Result**
+------------ | ------------ | ------------ |
+| Given user is not logged in click on profile icon and then register | Sign up page should load with sign up form |
+ Works as expected |
+
+<details><summary>See here</summary>
+<img src="docs/testing/user-story9a.png">
+<img src="docs/testing/user-story9b.png">
+</details>
+<br>
+<hr>
+
+9. As a **User**, I want to **book a table** so that **I can ensure I have a place at a convenient time.**
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -1049,20 +1070,21 @@ Performance, best practices and SEO was tested using Lighthouse.
 <br>
 <hr>
 
-9. As a **User**, I cannot **choose a past date while booking** so that **a booking is on a valid date**
+9. As a Site User I can recover my password so that I can set a new password in case its forgotten
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| Given user is logged in, click on Book a Table in the nav bar | Booking form will load | Works as expected |
-| Fill in booking information | Error will appear when trying to submit form | Works as expected |
+| While on the login page click forgot password to reset password | Redirect to reset password page |
+ Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory9.png">
+<img src="docs/testing/user-story9a.png">
+<img src="docs/testing/user-story9b.png">
 </details>
 <br>
 <hr>
 
-10. As a **User**, I am **notified** so that **I know my booking has been booked successfully**
+10. As a Site User I can receive an email confirmation when registering so that I can be notified registration is complete
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
@@ -1071,46 +1093,44 @@ Performance, best practices and SEO was tested using Lighthouse.
 | Click on the book button | Submits form redirects user to a success page with buttons | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory10a.png">
-<img src="docs/testing/userstory10b.png">
+<img src="docs/testing/user-story10a.png">
+<img src="docs/testing/user-story10b.png">
 </details>
 <br>
 <hr>
 
-11. As a **User**, I want to **be able to view a booking I have already made** so that **I can see my booking information**
+11. As a Site User I can have a profile so that I can store my information and order history so that I can checkout faster on my next shop
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| Given user is logged in, click on My Bookings in the nav bar | My Booking page will load | Works as expected |
+| Given user is logged in, click on profile icon in nav bar or hamburger menu and select Profile | Profile page will load with users saved information if any | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory11.png">
+<img src="docs/testing/user-story11a.png">
+<img src="docs/testing/user-story11b.png">
 </details>
 <br>
 <hr>
 
-12. As a **User**, I want to **modify my booking details (like time, date, or number of guests)** so that I can **change my plans if needed.**
+12. As a Shopper I can search for a product by name or description so that I can find a specific product
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| Given user is logged in, click on My Bookings in the nav bar | My Booking page will load | Works as expected |
-| Click on the change button on a booking | Change booking page will load with pre-filled form | Works as expected |
-| Click on the Saves Changes button | Saves changes and redirects to My Bookings page | Works as expected |
+| On the products page click on dropdown box to sort | Dropdown box will sort according to preference | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory12a.png">
-<img src="docs/testing/userstory12b.png">
+<img src="docs/testing/user-story12a.png">
+<img src="docs/testing/user-story12b.png">
 </details>
 <br>
 <hr>
 
-13. As a **User**, I am **notified when changing my booking information** so that **I know it has been changed successfully**
+13. As a Shopper I can sort by category so that I can select products of a specific category
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| Given user is logged in, click on My Bookings in the nav bar | My Booking page will load | Works as expected |
-| Click on the change button on a booking | Change booking page will load with pre-filled form | Works as expected |
-| Click on the Saves Changes button | Saves changes and redirects to My Bookings page and success message is shown to the user | Works as expected |
+| Given user is on product page, click on category in the right section | Page will sort by category | Works as expected |
+Works as expected |
 
 <details><summary>See here</summary>
 <img src="docs/testing/userstory13.png">
@@ -1118,74 +1138,64 @@ Performance, best practices and SEO was tested using Lighthouse.
 <br>
 <hr>
 
-14. As a **User**, I want to **be able to cancel a booking that I have made**
+14. As a Shopper I can sort by price so that I can select products of a specific price range (low-high/high-low)
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| Given user is logged in, click on My Bookings in the nav bar | My Booking page will load | Works as expected |
-| Click on the cancel button on a booking | Cancel booking page will load asking if user would like to delete booking | Works as expected |
-| Click on the Yes, Delete button | Saves changes and redirects to My Bookings page and success message is shown to the user | Works as expected |
+| On the products page click on dropdown box to sort | Dropdown box will sort according to preference | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory14a.png">
-<img src="docs/testing/userstory14b.png">
-<img src="docs/testing/userstory14c.png">
+<img src="docs/testing/user-story14.png">
+
 </details>
 <br>
 <hr>
 
-15. As a **User**, I want **know if I have successfully logged out of my account** 
+15. As a Shopper I can see my search results so that I can shop a specific product
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| Given user is logged in, click on Logout in the nav bar | A Logout confirmation page will load | Works as expected |
-| Click on the Logout button to Logout | Logs user out and redirects to a success page with button | Works as expected |
+| On any given page, use the search bar to search by name or description | Search result product will load | Works as expected |
+
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory15a.png">
-<img src="docs/testing/userstory15b.png">
-<img src="docs/testing/userstory15c.png">
+<img src="docs/testing/user-story15a.png">
+<img src="docs/testing/user-story15b.png">
 </details>
 <br>
 <hr>
 
-16. As an **Admin**, I want to **be able to log in to the admin interface** so that **I can interact with my app data.**
-15. As a **User**, I want **know if I have successfully logged out of my account** 
+16. As a Shopper I can view products in my cart so that I can review my cart before checkout
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| Visit the admin page https://strand-pp4-d640c87ff185.herokuapp.com/admin/  | Admin page Login will load | Works as expected |
-| Enter admin login username and password | Logs user into the django admin database | Works as expected |
+| On any given page, click on shopping bag icon in the nav bar | Bag page will load | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory16.png">
+<img src="docs/testing/user-story16a.png">
+<img src="docs/testing/user-story16b.png">
 </details>
 <br>
 <hr>
 
-17. As a **Admin**, I want to **confirm or reject online booking requests** so that **I can manage the restaurant's seating capacity.**
+17. As a Shopper I can select the quantity of a product so that I can buy more of a certain product
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| Visit the admin page https://strand-pp4-d640c87ff185.herokuapp.com/admin/  | Admin page Login will load | Works as expected |
-| Click on Bookings and choose one to view | Loads page containing all bookings made | Works as expected |
-| Click Status to change status and click save | Changes booking status for the user | Works as expected |
+| Given user is on product detail page, use selectors to change quantity to add to bag   | Selected quantity will be added to bag | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory17a.png">
-<img src="docs/testing/userstory17b.png">
-<img src="docs/testing/userstory17c.png">
+<img src="docs/testing/user-story17a.png">
+<img src="docs/testing/user-story17b.png">
 </details>
 <br>
 <hr>
 
-18. As an **Admin**, I want to be able to **create, update, read, and delete** the menu items so that **customers can see current menu and prices**
+18. As a Shopper I can adjust item quantity my bag so that I can add or remove more quantities to my bag
 
 **Step** | **Expected Result** | **Actual Result**
 ------------ | ------------ | ------------ |
-| Visit the admin page https://strand-pp4-d640c87ff185.herokuapp.com/admin/  | Admin page Login will load | Works as expected |
-| Click on Food Items or Drink Items  and choose one to view | Loads page containing all Food or Drink items made | Works as expected |
-| Click on add Food or Drink Item or checkboxes to delete items | Create or delete a new menu item | Works as expected |
+| Given user is on shopping bag page, use selectors to change quantity and click update | Selected quantity will be updated to bag | Works as expected |
 
 <details><summary>See here</summary>
 <img src="docs/testing/userstory18a.png">
