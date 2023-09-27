@@ -45,13 +45,14 @@
             <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'img/logo.png' %}" alt="Logo" style="width:100px;">
             </a>
+
             <div class="d-flex align-items-center">
                 <!-- Search bar for medium and large devices -->
                 <form class="form-inline ml-auto d-none d-lg-flex align-items-center" method="GET"
                     action="{% url 'products' %}">
                     <div class="input-group custom-search-container">
-                        <input class="form-control custom-search custom-search-md" name="q" placeholder="Search"
-                            aria-label="Search">
+                        <input class="form-control custom-search custom-search-md" type="text" name="q"
+                            placeholder="Search" aria-label="Search">
                         <div class="input-group-append">
                             <button class="btn btn-outline-primary custom-button custom-button-md" type="submit">
                                 <i class="fas fa-search i-w"></i>
@@ -59,6 +60,7 @@
                         </div>
                     </div>
                 </form>
+
                 <!-- Shopping bag icon for medium and large devices -->
                 <div class="navbar-icon-link d-none d-md-block d-sm-none">
                     <a href="{% url 'view_bag' %}">
@@ -73,32 +75,32 @@
                     </p>
                 </div>
                 <!-- Profile Dropdown -->
-                <ul>
-                    <li class="nav-item dropdown navbar-icon-link ml-3 d-none d-md-inline">
-                        <a class="dropdown-toggle dt-c navbar-icon-link" id="profileDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-user"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="profileDropdown">
-                            {% if request.user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                            <a class="dropdown-item" href="{% url 'add_product' %}">Add Products</a>
-                            {% endif %}
-                            <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-                            <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
-                            {% else %}
-                            <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
-                            <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
-                            {% endif %}
-                        </div>
-                    </li>
-                </ul>
+                <li class="nav-item dropdown navbar-icon-link ml-3 d-none d-md-inline">
+                    <a class="dropdown-toggle dt-c navbar-icon-link" id="profileDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <a class="dropdown-item" href="{% url 'add_product' %}">Add Products</a>
+                        {% endif %}
+                        <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                        <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                        {% else %}
+                        <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
+                        <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                        {% endif %}
+                    </div>
+                </li>
+
                 <!-- Hamburger menu -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
@@ -120,11 +122,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
                     </li>
+
                     <!-- Search bar for small devices in hamburger menu -->
                     <li class="nav-item d-lg-none">
                         <form class="form-inline ml-auto" method="GET" action="{% url 'products' %}">
                             <input class="form-control custom-search mr-sm-2" type="search" placeholder="Search"
-                                name="q" aria-label="Search">
+                                type="text" name="q" aria-label="Search">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-primary custom-button my-2 my-sm-0" type="submit">
                                     <i class="fas fa-search i-w"></i>
@@ -132,15 +135,16 @@
                             </div>
                         </form>
                     </li>
+
                     <!-- Shopping bag icon for small devices -->
-                    <li>
-                        <div class="d-md-none">
+                    <div class="d-md-none">
+                        <li class="nav-item">
                             <a class="nav-link" href="{% url 'view_bag' %}">
                                 <i class="fas fa-shopping-bag"></i>
                             </a>
-                        </div>
-                        <div class="total-c d-md-none">
-                            <p class="my-0">
+                        </li>
+                        <div class="d-md-none">
+                            <p class="my-0 total-c">
                                 {% if grand_total %}
                                 €{{ grand_total|floatformat:2 }}
                                 {% else %}
@@ -148,10 +152,10 @@
                                 {% endif %}
                             </p>
                         </div>
-                    </li>
+                    </div>
                     <!-- Profile Dropdown for small screens -->
-                    <li>
-                        <div class="d-md-none">
+                    <div>
+                        <li class="nav-item dropdown d-md-none">
                             <a class="nav-link dropdown-toggle" href="#" id="smallProfileDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-user"></i>
@@ -168,13 +172,13 @@
                                 <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
                                 {% endif %}
                             </div>
-                        </div>
-                    </li>
+                        </li>
+                    </div>
+
                 </ul>
             </div>
         </div>
     </nav>
-
     <!-- Free delivery banner -->
     <div class="container-fluid custom-banner text-white text-center">
         <p class="mb-custom">Orders more than €{{ free_delivery_threshold }} are eligible for free delivery!</p>
@@ -241,6 +245,7 @@
             </div>
         </div>
     </footer>
+
     <!-- Copyright -->
     <div class="text-center bg-custom text-black py-2">
         <small>&copy; 2023 Drew's Coffee. All Rights Reserved.</small>
