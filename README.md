@@ -875,3 +875,77 @@ was used to test accessibility across the website.
 <details><summary>404</summary>
 <img src="docs/validation/wave-404.png"> 
 </details>
+
+## Lighthouse
+
+Performance, best practices and SEO was tested using Lighthouse.
+
+<details><summary>Home</summary>
+<img src="docs/validation/lighthouse-home.png"> 
+</details>
+
+<details><summary>Products</summary>
+<img src="docs/validation/lighthouse-products.png"> 
+</details>
+
+<details><summary>Product Details</summary>
+<img src="docs/validation/lighthouse-productdetail.png"> 
+</details>
+
+<details><summary>Add Product</summary>
+<img src="docs/validation/lighthouse-addproduct.png"> 
+</details>
+
+<details><summary>Edit Product</summary>
+<img src="docs/validation/lighthouse-editproduct.png"> 
+</details>
+
+<details><summary>Bag</summary>
+<img src="docs/validation/lighthouse-bag.png"> 
+</details>
+
+<details><summary>Checkout</summary>
+<img src="docs/validation/lighthouse-checkout.png"> 
+</details>
+
+<details><summary>Checkout</summary>
+<img src="docs/validation/lighthouse-checkout.png"> 
+</details>
+
+<details><summary>Checkout Success</summary>
+<img src="docs/validation/lighthouse-checkoutsuccess.png"> 
+</details>
+
+<details><summary>Contact</summary>
+<img src="docs/validation/lighthouse-contact.png"> 
+</details>
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+<details><summary>Blog</summary>
+<img src="docs/validation/lighthouse-blog.png"> 
+</details>
+
+<details><summary>Profile</summary>
+<img src="docs/validation/lighthouse-profile.png"> 
+</details>
+
+<details><summary>Login</summary>
+<img src="docs/validation/lighthouse-login.png"> 
+</details>
+
+<details><summary>Logout</summary>
+<img src="docs/validation/lighthouse-logout.png"> 
+</details>
+
+<details><summary>Register</summary>
+<img src="docs/validation/lighthouse-register.png"> 
+</details>
+
+<details><summary>404</summary>
+<img src="docs/validation/lighthouse-404.png"> 
+</details>
+
+## Testing
+
+### Manual testing
