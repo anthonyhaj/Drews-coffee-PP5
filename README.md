@@ -556,3 +556,19 @@ The W3C Markup Validation Service was used to validate the HTML of the website.
 </details>
 
 - No Errors Found
+
+### Shop
+
+<details><summary>See Image</summary>
+<img src="docs/validation/html-products.png">
+</details>
+
+- No Errors Found
+
+### Product Detail
+
+<details><summary>See Image</summary>
+<img src="docs/validation/html-products.png">
+</details>
+
+- No Errors Found
