@@ -423,9 +423,124 @@ search engines in contextualizing the webpage and aligning it with related searc
 - Consists of Home, Shop, Blog, Contact Us, Shopping Bag, Register, and Login
 - Indicates login/logout in status.
 - Displayed on all pages.
+- Allows the user to search for products by name or description
 - On smaller devices switches to hamburger menu
 
 <details><summary>See Feature</summary>
 <img src="docs/features/feature-nav1.png">
 <img src="docs/features/feature-nav2.png">
+<img src="docs/features/feature-nav3.png">
+</details>
+
+### Mailing List Sign Up
+
+- Mailchimp signup for email mailing list.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+### Footer
+
+- Contains social media links, copyright, and contact information.
+- A Facebook and Instagram page for the business is used.
+- Displayed across all pages.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+### Sign up / Register
+- Contains form for users to register an account
+- All fields are required for registration
+
+<details><summary>See Feature</summary>
+<img src="docs/features/feature-register.png">
+</details>
+
+### Sign In
+- User can login here
+
+<details><summary>See Feature</summary>
+<img src="docs/features/feature-login.png">
+</details>
+
+### Sign Out
+- Allows the user to securely sign out.
+- Ask user if they are sure they want to sign out.
+
+<details><summary>See Feature</summary>
+<img src="docs/features/feature-logout.png">
+</details>
+
+### Profile
+- Allows the user to update their information and see their order history. 
+
+<details><summary>See Feature</summary>
+<img src="docs/features/feature-profile.png">
+</details>
+
+### Shop
+- Allows the user to view the listed products in the shop
+- Products can be filtered by category, name, price, or rating
+
+<details><summary>See Feature</summary>
+<img src="docs/features/feature-shop.png">
+</details>
+
+### Product Detail
+- Allows the user to view the products details.
+- User can select quantity and add to shopping bag
+
+<details><summary>See Feature</summary>
+<img src="docs/features/feature-product-detail.png">
+</details>
+
+### Add, Edit, Delete Product
+- Allows the admin to add, edit, and delete new or existing products.  
+
+<details><summary>See Add Feature</summary>
+<img src="docs/features/feature-product-add.png">
+<img src="docs/features/feature-product-edit.png">
+<img src="docs/features/feature-product-delete.png">
+</details>
+
+<details><summary>See Edit Feature</summary>
+<img src="docs/features/feature-product-edit.png">
+</details>
+
+<details><summary>See Delete Feature</summary>
+<img src="docs/features/feature-product-delete.png">
+</details>
+
+### Shopping Bag
+- Allows the user to view the basket with their items
+- When adding to bag, a popup will show preview of current bag
+
+<details><summary>See Feature</summary>
+<img src="docs/features/feature-bag.png">
+</details>
+
+### Checkout
+- Allows the user to purchase items in their basket
+- Users use stripe for card payments.
+- On successful purchace, user will receive conformation email
+
+<details><summary>See Feature</summary>
+<img src="docs/features/feature-checkout.png">
+</details>
+
+### Blog
+- The blog displays each post made by a staff member
+- Expands into the selected blog the user wishes to read 
+
+<details><summary>See Feature</summary>
+<img src="docs/features/feature-checkout.png">
+</details>
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+### Contact Us
+- A contact page with all contact details listed
+- Users can send a message using the message form
+- Shows Contact Information and a map
+
+<details><summary>See Feature</summary>
+<img src="docs/features/feature-contact.png">
 </details>
