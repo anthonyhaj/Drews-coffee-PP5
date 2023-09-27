@@ -397,3 +397,35 @@ I built my database using PostgreSQL. I have opted for PostgreSQL as my database
   - [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
   - [Wave Validator](https://wave.webaim.org/)
 
+## Features
+
+### Search Engine Optimisation (SEO)
+
+In the HTML structure of my web application's pages, I have incorporated meta tags to
+enhance search engine optimization (SEO). Specifically, the 'description' tag offers a concise overview of the page's content aiding users and search engines alike.
+Concurrently, the 'keywords' tag enumerates pertinent terms, thereby assisting
+search engines in contextualizing the webpage and aligning it with related search queries.
+
+### Home page
+
+- Home page contains navigation bar, a main body, and a footer
+
+<details><summary>See Feature</summary>
+<img src="docs/features/feature-home1.png">
+<img src="docs/features/feature-home2.png">
+<img src="docs/features/feature-home3.png">
+</details>
+
+### Navigation Bar
+
+- Fully Responsive.
+- Custom logo for the business
+- Consists of Home, Shop, Blog, Contact Us, Shopping Bag, Register, and Login
+- Indicates login/logout in status.
+- Displayed on all pages.
+- On smaller devices switches to hamburger menu
+
+<details><summary>See Feature</summary>
+<img src="docs/features/feature-nav1.png">
+<img src="docs/features/feature-nav2.png">
+</details>

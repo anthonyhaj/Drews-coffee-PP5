@@ -150,6 +150,25 @@ a {
     padding-bottom: 20px;
 }
 
+.aspect-ratio-box {
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%; /* 4:3 Aspect Ratio */
+    overflow: hidden;
+  }
+  
+  .aspect-ratio-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+
+  
+
 /* Dropdown Styles */
 .dt-c {
     color: #c7a17a !important;
@@ -241,6 +260,10 @@ a {
 
 /* Media queries for medium devices */
 @media (min-width: 768px) and (max-width: 992px) {
+
+    .form-inline {
+        flex-flow: inherit; 
+    }
     .custom-search-md {
         width: 100px;
         height: 25px;
@@ -267,5 +290,10 @@ a {
     .custom-card {
         margin-bottom: 20px;
     }
+}
 
+/* Media queries for x-small devices */
+
+@media (max-width: 576px){
+    
 }

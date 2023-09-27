@@ -62,7 +62,7 @@
                 </form>
 
                 <!-- Shopping bag icon for medium and large devices -->
-                <div class="navbar-icon-link d-md-block d-sm-none">
+                <div class="navbar-icon-link d-none d-md-block d-sm-none">
                     <a href="{% url 'view_bag' %}">
                         <i class="fas fa-shopping-bag pad-c"></i>
                     </a>
@@ -153,15 +153,28 @@
                             </p>
                         </div>
                     </div>
-
-                    <!-- Profile icon for small devices -->
+                    <!-- Profile Dropdown for small screens -->
                     <div>
-                        <li class="nav-item d-md-none">
-                            <a class="nav-link" href="">
+                        <li class="nav-item dropdown d-md-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="smallProfileDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-user"></i>
                             </a>
+                            <div class="dropdown-menu" aria-labelledby="smallProfileDropdown">
+                                {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                <a class="dropdown-item" href="{% url 'add_product' %}">Add Products</a>
+                                {% endif %}
+                                <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                                <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                                {% else %}
+                                <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
+                                <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                                {% endif %}
+                            </div>
                         </li>
                     </div>
+
                 </ul>
             </div>
         </div>
@@ -176,6 +189,30 @@
         {% block content %}
         {% endblock content %}
     </main>
+
+    <!-- Newsletter Sign-up -->
+    <div class="container-fluid newsletter-bg py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 text-center">
+                    <h2 class="newsletter-title">Subscribe to our Newsletter</h2>
+                    <hr>
+                    <p>Stay updated with our latest offers and news.</p>
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email"
+                                required>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer and social media links -->
     <footer class="footer mt-auto py-3 custom-bg-color">
         <div class="container text-center">
