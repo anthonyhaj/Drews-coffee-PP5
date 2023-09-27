@@ -75,25 +75,26 @@
                     </p>
                 </div>
                 <!-- Profile Dropdown -->
-                <li class="nav-item dropdown navbar-icon-link ml-3 d-none d-md-inline">
-                    <a class="dropdown-toggle dt-c navbar-icon-link" id="profileDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user"></i>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="profileDropdown">
-                        {% if request.user.is_authenticated %}
-                        {% if request.user.is_superuser %}
-                        <a class="dropdown-item" href="{% url 'add_product' %}">Add Products</a>
-                        {% endif %}
-                        <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-                        <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
-                        {% else %}
-                        <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
-                        <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
-                        {% endif %}
-                    </div>
-                </li>
-
+                <ul>
+                    <li class="nav-item dropdown navbar-icon-link d-none d-md-inline">
+                        <a class="dropdown-toggle dt-c navbar-icon-link" id="profileDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <a class="dropdown-item" href="{% url 'add_product' %}">Add Products</a>
+                            {% endif %}
+                            <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                            <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                            {% else %}
+                            <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
+                            <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                            {% endif %}
+                        </div>
+                    </li>
+                </ul>
                 <!-- Hamburger menu -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -127,7 +128,7 @@
                     <li class="nav-item d-lg-none">
                         <form class="form-inline ml-auto" method="GET" action="{% url 'products' %}">
                             <input class="form-control custom-search mr-sm-2" type="search" placeholder="Search"
-                                type="text" name="q" aria-label="Search">
+                                name="q" aria-label="Search">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-primary custom-button my-2 my-sm-0" type="submit">
                                     <i class="fas fa-search i-w"></i>
@@ -137,13 +138,11 @@
                     </li>
 
                     <!-- Shopping bag icon for small devices -->
-                    <div class="d-md-none">
-                        <li class="nav-item">
+                    <li class="nav-item">
+                        <div class="d-md-none">
                             <a class="nav-link" href="{% url 'view_bag' %}">
                                 <i class="fas fa-shopping-bag"></i>
                             </a>
-                        </li>
-                        <div class="d-md-none">
                             <p class="my-0 total-c">
                                 {% if grand_total %}
                                 €{{ grand_total|floatformat:2 }}
@@ -152,29 +151,27 @@
                                 {% endif %}
                             </p>
                         </div>
-                    </div>
+                    </li>
                     <!-- Profile Dropdown for small screens -->
-                    <div>
-                        <li class="nav-item dropdown d-md-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="smallProfileDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-user"></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="smallProfileDropdown">
-                                {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                <a class="dropdown-item" href="{% url 'add_product' %}">Add Products</a>
-                                {% endif %}
-                                <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-                                <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
-                                {% else %}
-                                <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
-                                <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
-                                {% endif %}
-                            </div>
-                        </li>
-                    </div>
 
+                    <li class="nav-item dropdown d-md-none">
+                        <a class="nav-link dropdown-toggle" href="#" id="smallProfileDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="smallProfileDropdown">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <a class="dropdown-item" href="{% url 'add_product' %}">Add Products</a>
+                            {% endif %}
+                            <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                            <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                            {% else %}
+                            <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
+                            <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                            {% endif %}
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -198,7 +195,7 @@
                     <h2 class="newsletter-title">Subscribe to our Newsletter</h2>
                     <hr>
                     <p>Stay updated with our latest offers and news.</p>
-                    <form method="post" action="">
+                    <form method="post">
                         {% csrf_token %}
                         <div class="input-group mb-3">
                             <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email"
