@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <!-- Blog Post Title -->
+            <h1 class="mb-4">{{ blog.title }}</h1>
+
+            <!-- Blog Post Author and Date -->
+            <p class="text-muted">
+                Written by {{ blog.author }} on {{ blog.created_date }}
+            </p>
+
+            <!-- Blog Post Image -->
+            {% if blog.featured_image %}
+            <img src="{{ blog.featured_image.url }}" alt="{{ blog.title }}" class="img-fluid rounded mb-4">
+            {% else %}
+            <img src="{{ MEDIA_URL }}noimage.jpg" alt="{{ blog.title }}" class="img-fluid rounded mb-4">
+            {% endif %}
+
+            <!-- Blog Post Content -->
+            <div>
+                {{ blog.content|linebreaks }}
+            </div>
+
+            <!-- Back to Blog List Button -->
+            <div class="mt-5 text-center">
+                <a href="{% url 'blog' %}" class="btn btn-primary">
+                    Back to Blog List
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

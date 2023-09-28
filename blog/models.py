@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
 class BlogPost(models.Model):
     STATUS_CHOICES = (
         (0, 'Draft'),
@@ -17,8 +16,12 @@ class BlogPost(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     content = models.TextField()
+    featured_image = models.ImageField(
+        null=True,
+        blank=True
+    )
     status = models.IntegerField(choices=STATUS_CHOICES, default=0)
-    tags = models.CharField(max_length=100, blank=True, null=True)  # New field
+    tags = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
         ordering = ['-created_date']

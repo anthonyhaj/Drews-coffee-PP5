@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- The main blog container -->
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Our Blogs</h1>
+    <div class="row">
+        {% for blog in blogs %}
+        <div class="col-md-4 col-sm-6 mb-5">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5 class="text-truncate">{{ blog.title }}</h5> 
+                </div>
+
+                <!-- Image Section -->
+                {% if blog.featured_image %}
+                <img src="{{ blog.featured_image.url }}" alt="{{ blog.title }}" class="card-img-top img-fluid">
+                {% else %}
+                <img src="{{ MEDIA_URL }}noimage.jpg" alt="{{ blog.title }}" class="card-img-top img-fluid">
+                {% endif %}
+
+                <!-- Body Section -->
+                <div class="card-body">
+                    <small class="text-muted">Published: {{ blog.created_date }}</small>
+                    <p class="card-text mt-3 text-truncate">{{ blog.content|truncatechars:100 }}</p>
+                    <!-- Use text-truncate to ellipsis long text -->
+                </div>
+
+                <!-- Footer Section -->
+                <div class="card-footer align-center">
+                    <a href="{% url 'blog_detail' blog.slug %}" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
