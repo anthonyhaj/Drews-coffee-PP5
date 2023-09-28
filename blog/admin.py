@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import BlogPost
 
+
 # Registration of the post items for the admin panel
 @admin.register(BlogPost)
 class BlogPostAdmin(admin.ModelAdmin):

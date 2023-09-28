@@ -82,7 +82,9 @@ Drew's Coffee maintains active Facebook and Instagram accounts to engage with ou
 ### Mailing List
 Drew's Coffee leverages Mailchimp to manage our mailing list effectively. Subscribers receive bi-weekly newsletters containing exclusive promotions, updates on new coffee releases, and curated content related to coffee culture. This mailing list serves as a direct channel of communication to our most engaged customers, and analytics from Mailchimp assist us in optimizing the content and timing of these communications to enhance user engagement and drive sales
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!
+<details><summary>Mailchimp</summary>
+<img src="docs/mailchimp.png">
+</details>
 
 ## User Goals
 
@@ -245,13 +247,12 @@ email sign up form and useful links as well as contact information.
 I am using AWS S3 buckets to store my data. It is a cloud storage service provided by Amazon
 Web Services. 
 
-<details><summary>See Color Palette</summary>
-<img src="docs/agile/colors.png">
-</details><details><summary>See Color Palette</summary>
-<img src="docs/agile/colors.png">
+<details><summary>AWS</summary>
+<img src="docs/aws/aws1.png">
+<img src="docs/aws/aws2.png">
+<img src="docs/aws.aws3.png">
 </details>
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ## Database
 
@@ -366,6 +367,21 @@ I built my database using PostgreSQL. I have opted for PostgreSQL as my database
 |            | phone        | PhoneNumberField |
 |            | body         | TextField        |  
 
+### Blog Model
+
+| Key        | Name           | Type           |
+|------------|----------------|----------------|
+| PrimaryKey | id             | AutoField      |
+|            | title          | CharField[200] |
+|            | slug           | SlugField[200] |
+| ForeignKey | author         | User model     |
+|            | created_date   | DateTimeField  |
+|            | updated_date   | DateTimeField  |
+|            | content        | TextField      |
+|            | featured_image | ImageField     |
+|            | status         | IntegerField   |
+|            | tags           | CharField[100] |
+
 <hr>
 
 ## Technologies Used
@@ -440,7 +456,9 @@ search engines in contextualizing the webpage and aligning it with related searc
 
 - Mailchimp signup for email mailing list.
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<details><summary>See Feature</summary>
+<img src="docs/features/feature-mailchimp.png">
+</details>
 
 ### Footer
 
@@ -448,7 +466,10 @@ search engines in contextualizing the webpage and aligning it with related searc
 - A Facebook and Instagram page for the business is used.
 - Displayed across all pages.
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<details><summary>See Feature</summary>
+<img src="docs/features/feature-footer.png">
+</details>
+
 
 ### Sign up / Register
 - Contains form for users to register an account
@@ -535,10 +556,9 @@ search engines in contextualizing the webpage and aligning it with related searc
 - Expands into the selected blog the user wishes to read 
 
 <details><summary>See Feature</summary>
-<img src="docs/features/feature-checkout.png">
+<img src="docs/features/feature-blog1.png">
+<img src="docs/features/feature-blog2.png">
 </details>
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ### Contact Us
 - A contact page with all contact details listed
@@ -630,7 +650,7 @@ The W3C Markup Validation Service was used to validate the HTML of the website.
 ### Blog
 
 <details><summary>See Image</summary>
-<img src="docs/validation/html-blog.png">  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<img src="docs/validation/html-blog.png"> 
 </details>
 
 - No Errors Found
@@ -801,11 +821,19 @@ JSHint Validation Service was used to validate all javaScript files.
 - All pages returned 0 errors. 
 
 ### Blog
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 <details><summary>admin.py</summary>
-<img src="docs/validation/pep8-products-admin.png"> 
+<img src="docs/validation/pep8-blog-admin.png">
 </details>
+<details><summary>model.py</summary>
+<img src="docs/validation/pep8-blog-models.png">
+</details>
+<details><summary>urls.py</summary>
+<img src="docs/validation/pep8-blog-urls.png">
+</details>
+<details><summary>views.py</summary>
+<img src="docs/validation/pep8-blog-views.png">
+</details>
+
 
 
 ## Accessibility 
@@ -853,8 +881,6 @@ was used to test accessibility across the website.
 <details><summary>Contact</summary>
 <img src="docs/validation/wave-contact.png"> 
 </details>
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 <details><summary>Blog</summary>
 <img src="docs/validation/wave-blog.png"> 
@@ -923,8 +949,6 @@ Performance, best practices and SEO was tested using Lighthouse.
 <details><summary>Contact</summary>
 <img src="docs/validation/lighthouse-contact.png"> 
 </details>
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 <details><summary>Blog</summary>
 <img src="docs/validation/lighthouse-blog.png"> 
@@ -1282,9 +1306,15 @@ Google Chrome
 Firefox
 
 ## Bugs
+
 | **Bug** | **Fix** |
 | ------- | ------- |
-| Bookings made for same club, date and time | UniqueTogether was used to ensure no double bookings could be made |
+| Unauthenticated users could see admin pages | Added `@login_required` decorators to restrict access |
+| Product image not displaying | Changed image path to use Django's `{{ MEDIA_URL }}` |
+| Search functionality returning incorrect products | Revised the query logic to filter results more accurately |
+| Broken responsiveness on mobile devices | Applied Bootstrap classes and custom CSS for mobile responsiveness |
+| Blog post content displayed as HTML tags | Used `safe` filter to render HTML in templates |
+| Unable to delete items from cart | Fixed AJAX request handling for item deletion |
 
 ## Deployment
 ### AWS S3 Bucket Setup 

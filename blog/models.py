@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class BlogPost(models.Model):
     STATUS_CHOICES = (
         (0, 'Draft'),
