@@ -73,7 +73,11 @@ In summary, Drew's Coffee aims to be a groundbreaking venture in the coffee mark
 ### Social Media
 Drew's Coffee maintains active Facebook and Instagram accounts to engage with our community and keep them updated on new products, promotions, and coffee culture. Both platforms are strategically used to boost brand awareness and drive traffic to our e-commerce site. Periodic analytics reviews guide our content and promotional strategies to continually grow and serve our community better
 
-!!!!!!!!!!!!!!!
+[Visit Facebook Page](https://www.facebook.com/profile.php?id=61551717157784)  
+(Ctrl + click to open in new tab)
+
+[Visit Instagram Page](https://www.instagram.com/drewscoffee1/)  
+(Ctrl + click to open in new tab)
 
 ### Mailing List
 Drew's Coffee leverages Mailchimp to manage our mailing list effectively. Subscribers receive bi-weekly newsletters containing exclusive promotions, updates on new coffee releases, and curated content related to coffee culture. This mailing list serves as a direct channel of communication to our most engaged customers, and analytics from Mailchimp assist us in optimizing the content and timing of these communications to enhance user engagement and drive sales
