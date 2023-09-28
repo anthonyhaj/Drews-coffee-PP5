@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://drews-coffee-pp5-3d45d25f45a2.herokuapp.com/sitemap.xml
