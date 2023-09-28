@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG= True
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-anthonyhaj-drewscoffeep-ho05p5bmsk5.ws-eu105.gitpod.io',
                  'drews-coffee-pp5-3d45d25f45a2.herokuapp.com', 'localhost']
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'contact',
+    'blog',
 ]
 
 MIDDLEWARE = [
