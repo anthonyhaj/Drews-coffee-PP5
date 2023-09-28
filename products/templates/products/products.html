@@ -57,7 +57,7 @@
                         <!-- Edit & Remove Links -->
                         <a href="{% url 'edit_product' product.id %}" class="text-info">Edit</a>
                         |
-                        <a href="" class="text-danger">Remove</a>
+                        <a href="{% url 'delete_product' product.id %}" class="text-danger">Remove</a>
                     </div>
 
                     <!-- Card Footer -->
