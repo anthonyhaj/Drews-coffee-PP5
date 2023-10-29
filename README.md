@@ -21,6 +21,7 @@
   - [Site Owner Goals](#site-owner-goals)
   - [User Experience](#user-experience)
   - [User Stories](#user-stories)
+  - [Wireframes](#wireframes)
   - [Design](#design)
     - [Colors](#colors)
     - [Fonts](#fonts)
@@ -197,6 +198,40 @@ The primary target audience for Drew's Coffee consists of coffee enthusiasts spa
 <img src="docs/agile/user-stories2.png">
 <img src="docs/agile/user-stories3.png">
 </details>
+
+## Wireframes
+
+Wireframes were created using Balsamiq. A very handy tool for creating mockups for any application in order to help design, 
+arrange, and plan for future product implementation
+
+<details><summary>Home</summary>
+<img src="docs/wireframes/wireframe-home.png">
+</details>
+
+<details><summary>Shop</summary>
+<img src="docs/wireframes/wireframe-shop.png">
+</details>
+
+<details><summary>Product Detail</summary>
+<img src="docs/wireframes/wireframe-detail.png">
+</details>
+
+<details><summary>Shopping Bag</summary>
+<img src="docs/wireframes/wireframe-bag.png">
+</details>
+
+<details><summary>Checkout</summary>
+<img src="docs/wireframes/wireframe-checkout.png">
+</details>
+
+<details><summary>Profile</summary>
+<img src="docs/wireframes/wireframe-profile.png">
+</details>
+
+<details><summary>Blog</summary>
+<img src="docs/wireframes/wireframe-blog.png">
+</details>
+
 
 ## Design
 
