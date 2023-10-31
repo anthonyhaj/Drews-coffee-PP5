@@ -29,6 +29,7 @@ class Product(models.Model):
         null=True,
         blank=True
     )
+    inventory = models.PositiveIntegerField(default=10)
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
