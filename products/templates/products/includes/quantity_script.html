@@ -1,5 +1,5 @@
 <script>
-    // Function to handle enable/disable state of +/- buttons
+    // Function to handle enable/disable state of +/- buttons and inventory validation
     function handleEnableDisable(itemId, inputElement) {
         var currentValue;
         if (inputElement) {
@@ -9,9 +9,10 @@
         }
         var decrementButton = $(inputElement).closest('.input-group').find('.decrement-qty');
         var incrementButton = $(inputElement).closest('.input-group').find('.increment-qty');
+        var maxInventory = parseInt($(inputElement).attr('max'));
 
         $(decrementButton).prop('disabled', currentValue < 2);
-        $(incrementButton).prop('disabled', currentValue > 98);
+        $(incrementButton).prop('disabled', currentValue >= maxInventory);
     }
 
     // Initialize the state of the +/- buttons for each item
@@ -25,10 +26,16 @@
     $('.qty_input').change(function () {
         var itemId = $(this).data('item_id');
         var isValid = $.isNumeric($(this).val()) && $(this).val() >= 1 && $(this).val() <= 99;
+        var maxInventory = parseInt($(this).attr('max'));
 
         if (!isValid) {
             toastr.error('Invalid quantity');
             return;
+        }
+
+        if ($(this).val() > maxInventory) {
+            toastr.error('Exceeds available inventory');
+            $(this).val(maxInventory);
         }
 
         // Perform AJAX call to update quantity
@@ -55,9 +62,10 @@
         var itemId = $(this).data('item_id');
         var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
         var currentValue = parseInt($(closestInput).val());
+        var maxInventory = parseInt($(closestInput).attr('max'));
 
         if ($(this).hasClass('increment-qty')) {
-            if (currentValue < 99) {
+            if (currentValue < maxInventory) {
                 $(closestInput).val(currentValue + 1);
             }
         } else {
