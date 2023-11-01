@@ -12,4 +12,4 @@ def inventory_status(quantity):
         else:
             return f'In stock ({quantity} available)'
     else:
-        return 'Out of Stock'
+        return 'Out of Stock!'
