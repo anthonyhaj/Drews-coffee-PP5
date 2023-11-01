@@ -23,37 +23,26 @@ def add_to_bag(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity', 1))
     redirect_url = request.POST.get('redirect_url', '/')
+
+    if product.inventory < quantity:
+        messages.error(request, 'This product is out of stock.')
+        return redirect(redirect_url)
+
     bag = request.session.get('bag', {})
-    size = None
+    size = request.POST.get('size', None)
 
-    if 'size' in request.POST:
-        size = request.POST['size']
+    if item_id not in bag:
+        bag[item_id] = {'items_by_size': {}, 'items_by_quantity': 0}
 
-    # Check if the item is already in the bag
-    if item_id in bag.keys():
-        # If it's an int, it's not whats expected. Reset to a dictionary.
-        if isinstance(bag[item_id], int):
-            bag[item_id] = {}
-
-        if size:
-            if 'items_by_size' not in bag[item_id]:
-                bag[item_id]['items_by_size'] = {}
-            if size in bag[item_id]['items_by_size']:
-                bag[item_id]['items_by_size'][size] += quantity
-            else:
-                bag[item_id]['items_by_size'][size] = quantity
+    if size:
+        if size in bag[item_id]['items_by_size']:
+            bag[item_id]['items_by_size'][size] += quantity
         else:
-            if 'items_by_quantity' not in bag[item_id]:
-                bag[item_id]['items_by_quantity'] = 0
-
-            bag[item_id]['items_by_quantity'] += quantity
+            bag[item_id]['items_by_size'][size] = quantity
     else:
-        if size:
-            bag[item_id] = {'items_by_size': {size: quantity}}
-        else:
-            bag[item_id] = {'items_by_quantity': quantity}
+        bag[item_id]['items_by_quantity'] += quantity
 
-    messages.success(request, f'Added {product.name} in your bag.')
+    messages.success(request, f'Added {product.name} to your bag.')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
