@@ -81,8 +81,10 @@ def all_products(request):
 
 def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
+    is_available = product.is_available()  # Check availability
     context = {
         'product': product,
+        'is_available': is_available,  # Pass the availability status to the template
     }
     return render(request, 'products/product_detail.html', context)
 

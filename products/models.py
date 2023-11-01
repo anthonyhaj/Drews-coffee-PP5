@@ -35,6 +35,9 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+    def is_available(self, quantity=1):
+        return self.inventory >= quantity
+
 
 class ProductImage(models.Model):
     product = models.ForeignKey(

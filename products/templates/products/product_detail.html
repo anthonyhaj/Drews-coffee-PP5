@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load inventory_tags %}
+
 
 {% block content %}
 <div class="container my-5">
@@ -22,6 +24,15 @@
             <h1 class="mb-4">{{ product.name }}</h1>
             <p class="mb-4">{{ product.description }}</p>
             <h3 class="mb-4">€{{ product.price }}</h3>
+
+            <p
+                class="{% if product.inventory|inventory_status == 'Out of Stock' %}
+                text-danger
+                {% else %}
+                text-success
+                {% endif %}">
+                {{ product.inventory|inventory_status }}
+            </p>
 
             <!-- Shopping Bag Form -->
             <form class="align-c" method="post" action="{% url 'add_to_bag' product.id %}">
