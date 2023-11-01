@@ -65,8 +65,8 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
+
             for item_id, item_data in bag.items():
-                print(f"Item data: {item_data}")
                 try:
                     product = Product.objects.get(id=item_id)
                     if 'items_by_quantity' in item_data:
@@ -78,27 +78,23 @@ def checkout(request):
                         )
                         order_line_item.save()
 
+                        # Update the product's inventory here
+                        product.inventory -= quantity
+                        product.save()
+
                 except Product.DoesNotExist:
-                    messages.error(request, (
-                        "One of the products in your bag wasn't found \
-                             in our database. ")
-                    )
+                    messages.error(request, "One of the products in your bag wasn't found in our database.")
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse(
-                'checkout_success', args=[order.order_number]
-            ))
+            return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
-            messages.error(request, 'There was an error with your form. \
-                Please double check your information.')
+            messages.error(request, 'There was an error with your form. Please double check your information.')
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(
-                request, "There's nothing in your bag at the moment"
-            )
+            messages.error(request, "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -110,8 +106,6 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill the form with any info the user maintains
-        # in their profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -132,8 +126,7 @@ def checkout(request):
             order_form = OrderForm()
 
     if not stripe_public_key:
-        messages.warning(request, 'Stripe public key is missing. \
-            Did you forget to set it in your environment?')
+        messages.warning(request, 'Stripe public key is missing. Did you forget to set it in your environment?')
 
     template = 'checkout/checkout.html'
     context = {
@@ -186,4 +179,11 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
-    
+
+
+def update_product_inventory(product, quantity):
+    """
+    Update the product's inventory by decrementing it with the purchased quantity.
+    """
+    product.inventory -= quantity
+    product.save()
