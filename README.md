@@ -352,6 +352,7 @@ I built my database using PostgreSQL. I have opted for PostgreSQL as my database
 |            | description | TextField      |
 |            | has_sizes   | BooleanField   |
 |            | price       | DecimalField   |
+|            | inventory   | IntegerField   |
 | ForeignKey | category    | Category model |
 |            | rating      | DecimalField   |
 |            | image       | ImageField     |
@@ -443,6 +444,7 @@ I built my database using PostgreSQL. I have opted for PostgreSQL as my database
 - [AWS](https://aws.amazon.com/)
 - [jQuery](https://jquery.com)
 - [Postgres](https://www.postgresql.org/)
+- [Balsamiq](https://balsamiq.com/)
 - [PyCharm](https://www.jetbrains.com/pycharm/download/?section=windows)
 - Validation:
   - [WC3 Validator](https://validator.w3.org/)
