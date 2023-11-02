@@ -42,10 +42,6 @@ def add_to_bag(request, item_id):
     else:
         bag[item_id]['items_by_quantity'] += quantity
 
-    # Reduce the inventory
-    product.inventory -= quantity
-    product.save()
-
     messages.success(request, f'Added {product.name} to your bag.')
 
     request.session['bag'] = bag
@@ -72,12 +68,8 @@ def adjust_bag(request, item_id):
         # Handle the size logic
         if size:
             if 'items_by_size' not in bag[item_id]:
-                messages.error(request, f'Size {size.upper()} {product.name} does not exist in your bag')
-                return redirect(reverse('view_bag'))
-
-            # Check if the adjusted quantity exceeds available inventory
-            if quantity > product.inventory:
-                messages.error(request, f'Not enough stock available for size {size.upper()} {product.name}.')
+                messages.error(request, f'Size {size.upper()} {product.name} \
+                    does not exist in your bag')
                 return redirect(reverse('view_bag'))
 
             if quantity > 0:
@@ -91,26 +83,25 @@ def adjust_bag(request, item_id):
                 if not bag[item_id]['items_by_size']:
                     bag.pop(item_id)
                 messages.success(
-                    request, f'Removed size {size.upper()} {product.name} from your bag'
+                    request, f'Removed size {size.upper()} {product.name} \
+                        from your bag'
                 )
         else:
             if 'items_by_quantity' not in bag[item_id]:
-                messages.error(request, f'{product.name} does not exist in your bag')
-                return redirect(reverse('view_bag'))
-
-            # Check if the adjusted quantity exceeds available inventory
-            if quantity > product.inventory:
-                messages.error(request, f'Not enough stock available for {product.name}.')
+                messages.error(request, f'{product.name} does not exist in \
+                     your bag')
                 return redirect(reverse('view_bag'))
 
             if quantity > 0:
                 bag[item_id]['items_by_quantity'] = quantity
                 messages.success(
-                    request, f'Updated {product.name} quantity to {bag[item_id]["items_by_quantity"]}'
+                    request, f'Updated {product.name} quantity to \
+                         {bag[item_id]["items_by_quantity"]}'
                 )
             else:
                 bag.pop(item_id)
-                messages.success(request, f'Removed {product.name} from your bag')
+                messages.success(request, f'Removed {product.name} from \
+                     your bag')
     else:
         messages.error(request, f'{product.name} does not exist in your bag')
         return redirect(reverse('view_bag'))

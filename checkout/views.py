@@ -33,10 +33,8 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Sorry, your payment cannot be \
-            processed right now. Please try again later.')
+        messages.error(request, 'Sorry, your payment cannot be processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
-
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -71,16 +69,22 @@ def checkout(request):
                     product = Product.objects.get(id=item_id)
                     if 'items_by_quantity' in item_data:
                         quantity = item_data['items_by_quantity']
+
+                        # Validation check: Ensure there's enough inventory
+                        if product.inventory >= quantity:
+                            product.inventory -= quantity
+                            product.save()
+                        else:
+                            messages.error(request, f"Sorry, there's not enough {product.name} in stock.")
+                            order.delete()
+                            return redirect(reverse('view_bag'))
+
                         order_line_item = OrderLineItem(
                             order=order,
                             product=product,
                             quantity=quantity,
                         )
                         order_line_item.save()
-
-                        # Update the product's inventory here
-                        product.inventory -= quantity
-                        product.save()
 
                 except Product.DoesNotExist:
                     messages.error(request, "One of the products in your bag wasn't found in our database.")
@@ -137,21 +141,15 @@ def checkout(request):
 
     return render(request, template, context)
 
-
 def checkout_success(request, order_number):
-    """
-    Handle successful checkouts
-    """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
 
-    # Save the user's info
     if save_info:
         profile_data = {
             'default_phone_number': order.phone_number,
@@ -166,9 +164,7 @@ def checkout_success(request, order_number):
         if user_profile_form.is_valid():
             user_profile_form.save()
 
-    messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.')
+    messages.success(request, f'Order successfully processed! Your order number is {order_number}. A confirmation email will be sent to {order.email}.')
 
     if 'bag' in request.session:
         del request.session['bag']
@@ -180,10 +176,6 @@ def checkout_success(request, order_number):
 
     return render(request, template, context)
 
-
 def update_product_inventory(product, quantity):
-    """
-    Update the product's inventory by decrementing it with the purchased quantity.
-    """
     product.inventory -= quantity
     product.save()
