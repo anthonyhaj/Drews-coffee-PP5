@@ -1023,8 +1023,8 @@ Performance, best practices and SEO was tested using Lighthouse.
 | Click on the footer links  | link pages will open in new tab | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story1a.png">
-<img src="docs/testing/user-story1b.png">
+<img src="docs/validation/user-story1a.png">
+<img src="docs/validation/user-story1b.png">
 </details>
 <br>
 <hr>
@@ -1036,8 +1036,8 @@ Performance, best practices and SEO was tested using Lighthouse.
 | Click any action to trigger a error or success message | When triggered, notification appears | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story2a.png">
-<img src="docs/testing/user-story2b.png">
+<img src="docs/validation/user-story2a.png">
+<img src="docs/validation/user-story2b.png">
 </details>
 <br>
 <hr>
@@ -1049,7 +1049,7 @@ Performance, best practices and SEO was tested using Lighthouse.
 | Click any the Profile icon in the navigationbar or hamburger menu | See if logged in | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story3.png">
+<img src="docs/validation/user-story3.png">
 </details>
 <br>
 <hr>
@@ -1061,8 +1061,8 @@ Performance, best practices and SEO was tested using Lighthouse.
 | Click any the Shop link in the navigation bar and choose category | Directs user to relevant product list page | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story4a.png">
-<img src="docs/testing/user-story4b.png">
+<img src="docs/validation/user-story4a.png">
+<img src="docs/validation/user-story4b.png">
 </details>
 <br>
 <hr>
@@ -1074,8 +1074,8 @@ Performance, best practices and SEO was tested using Lighthouse.
 | From the products page click on view product | Product detail page will load | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story5a.png">
-<img src="docs/testing/user-story5b.png">
+<img src="docs/validation/user-story5a.png">
+<img src="docs/validation/user-story5b.png">
 </details>
 <br>
 <hr>
@@ -1087,8 +1087,8 @@ Performance, best practices and SEO was tested using Lighthouse.
 | On any product detail page click on add to shopping bag | Item will be added to bag and a preview shown | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story6a.png">
-<img src="docs/testing/user-story6b.png">
+<img src="docs/validation/user-story6a.png">
+<img src="docs/validation/user-story6b.png">
 </details>
 <br>
 <hr>
@@ -1100,10 +1100,10 @@ Performance, best practices and SEO was tested using Lighthouse.
 | On any given page click on the profile icon and choose login or logout | Login page and logout confirm pages load | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story7a.png">
-<img src="docs/testing/user-story7b.png">
-<img src="docs/testing/user-story7c.png">
-<img src="docs/testing/user-story7d.png">
+<img src="docs/validation/user-story7a.png">
+<img src="docs/validation/user-story7b.png">
+<img src="docs/validation/user-story7c.png">
+<img src="docs/validation/user-story7d.png">
 </details>
 <br>
 <hr>
@@ -1116,8 +1116,8 @@ Performance, best practices and SEO was tested using Lighthouse.
  Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story9a.png">
-<img src="docs/testing/user-story9b.png">
+<img src="docs/validation/user-story9a.png">
+<img src="docs/validation/user-story9b.png">
 </details>
 <br>
 <hr>
@@ -1129,8 +1129,8 @@ Performance, best practices and SEO was tested using Lighthouse.
 | Given user is logged in, click on Book a Table in the nav bar | If logged in shows a book a table form otherwise asks user to log in in order to book | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory8a.png">
-<img src="docs/testing/userstory8b.png">
+<img src="docs/validation/userstory8a.png">
+<img src="docs/validation/userstory8b.png">
 </details>
 <br>
 <hr>
@@ -1143,8 +1143,8 @@ Performance, best practices and SEO was tested using Lighthouse.
  Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story9a.png">
-<img src="docs/testing/user-story9b.png">
+<img src="docs/validation/user-story9a.png">
+<img src="docs/validation/user-story9b.png">
 </details>
 <br>
 <hr>
@@ -1158,8 +1158,8 @@ Performance, best practices and SEO was tested using Lighthouse.
 | Click on the book button | Submits form redirects user to a success page with buttons | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story10a.png">
-<img src="docs/testing/user-story10b.png">
+<img src="docs/validation/user-story10a.png">
+<img src="docs/validation/user-story10b.png">
 </details>
 <br>
 <hr>
@@ -1171,8 +1171,8 @@ Performance, best practices and SEO was tested using Lighthouse.
 | Given user is logged in, click on profile icon in nav bar or hamburger menu and select Profile | Profile page will load with users saved information if any | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story11a.png">
-<img src="docs/testing/user-story11b.png">
+<img src="docs/validation/user-story11a.png">
+<img src="docs/validation/user-story11b.png">
 </details>
 <br>
 <hr>
@@ -1184,8 +1184,8 @@ Performance, best practices and SEO was tested using Lighthouse.
 | On the products page click on dropdown box to sort | Dropdown box will sort according to preference | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story12a.png">
-<img src="docs/testing/user-story12b.png">
+<img src="docs/validation/user-story12a.png">
+<img src="docs/validation/user-story12b.png">
 </details>
 <br>
 <hr>
@@ -1198,7 +1198,7 @@ Performance, best practices and SEO was tested using Lighthouse.
 Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/userstory13.png">
+<img src="docs/validation/userstory13.png">
 </details>
 <br>
 <hr>
@@ -1210,7 +1210,7 @@ Works as expected |
 | On the products page click on dropdown box to sort | Dropdown box will sort according to preference | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story14.png">
+<img src="docs/validation/user-story14.png">
 
 </details>
 <br>
@@ -1224,8 +1224,8 @@ Works as expected |
 
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story15a.png">
-<img src="docs/testing/user-story15b.png">
+<img src="docs/validation/user-story15a.png">
+<img src="docs/validation/user-story15b.png">
 </details>
 <br>
 <hr>
@@ -1237,8 +1237,8 @@ Works as expected |
 | On any given page, click on shopping bag icon in the nav bar | Bag page will load | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story16a.png">
-<img src="docs/testing/user-story16b.png">
+<img src="docs/validation/user-story16a.png">
+<img src="docs/validation/user-story16b.png">
 </details>
 <br>
 <hr>
@@ -1250,8 +1250,8 @@ Works as expected |
 | Given user is on product detail page, use selectors to change quantity to add to bag   | Selected quantity will be added to bag | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story17a.png">
-<img src="docs/testing/user-story17b.png">
+<img src="docs/validation/user-story17a.png">
+<img src="docs/validation/user-story17b.png">
 </details>
 <br>
 <hr>
@@ -1263,8 +1263,8 @@ Works as expected |
 | Given user is on shopping bag page, use selectors to change quantity and click update | Selected quantity will be updated to bag | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story18a.png">
-<img src="docs/testing/user-story18b.png">
+<img src="docs/validation/user-story18a.png">
+<img src="docs/validation/user-story18b.png">
 </details>
 <br>
 <hr>
@@ -1277,8 +1277,8 @@ Works as expected |
  Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story19a.png">
-<img src="docs/testing/user-story19b.png">
+<img src="docs/validation/user-story19a.png">
+<img src="docs/validation/user-story19b.png">
 </details>
 
 20. As a Shopper I can receive email confirmation so that I can have a receipt of my purchase
@@ -1289,8 +1289,8 @@ Works as expected |
  Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story20a.png">
-<img src="docs/testing/user-story20b.png">
+<img src="docs/validation/user-story20a.png">
+<img src="docs/validation/user-story20b.png">
 </details>
 
 21. As a Store Owner I can add a product so that I can add new products to the shop
@@ -1300,8 +1300,8 @@ Works as expected |
 | Given a superuser and on any given page, click on profile icon and select add a product  | Add product page will load with form to add product | Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story21a.png">
-<img src="docs/testing/user-story21b.png">
+<img src="docs/validation/user-story21a.png">
+<img src="docs/validation/user-story21b.png">
 </details>
 
 22. As a Store Owner I can Edit a product so that I can edit existing products in the shop
@@ -1312,8 +1312,8 @@ Works as expected |
  Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story22a.png">
-<img src="docs/testing/user-story22b.png">
+<img src="docs/validation/user-story22a.png">
+<img src="docs/validation/user-story22b.png">
 </details>
 
 23. As a Store Owner I can delete a product so that I can delete existing products from the shop
@@ -1324,8 +1324,8 @@ Works as expected |
  Works as expected |
 
 <details><summary>See here</summary>
-<img src="docs/testing/user-story23a.png">
-<img src="docs/testing/user-story23b.png">
+<img src="docs/validation/user-story23a.png">
+<img src="docs/validation/user-story23b.png">
 </details>
 
 ### Device Testing & Browser compatibility
