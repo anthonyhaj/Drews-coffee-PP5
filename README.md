@@ -1,10 +1,10 @@
 # Drew's Coffee PP5-Ecommerce
 
-![Am I Responsive]()
+![Am I Responsive](docs/amiresponsive.png)
 
 **Developer: Anthony Haj Ibrahim **
 
-💻 [Visit live website]()  
+💻 [Visit live website](https://drews-coffee-pp5-3d45d25f45a2.herokuapp.com/)   
 (Ctrl + click to open in new tab)
 
 

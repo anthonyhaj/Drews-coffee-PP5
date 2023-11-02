@@ -60,27 +60,28 @@
                         |
                         <a href="{% url 'delete_product' product.id %}" class="text-danger">Remove</a>
                         {% endif %}
+                    </div>
 
-                        <!-- Card Footer -->
-                        <div class="card-footer">
-                            <small class="text-muted"><i class="fa-regular fa-star text-warning"></i>Rating:
-                                {{ product.rating }}</small>
+                    <!-- Card Footer -->
+                    <div class="card-footer">
+                        <small class="text-muted"><i class="fa-regular fa-star text-warning"></i>Rating:
+                            {{ product.rating }}</small>
 
-                            <!-- View & Add to Bag Buttons -->
-                            <div class="mt-2">
-                                <a href="{% url 'product_detail' product.id %}" class="btn btn-primary btn-sm">View
-                                    Details</a>
-                            </div>
+                        <!-- View & Add to Bag Buttons -->
+                        <div class="mt-2">
+                            <a href="{% url 'product_detail' product.id %}" class="btn btn-primary btn-sm">View
+                                Details</a>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
-                {% else %}
-                <div class="col-12">
-                    <p class="text-center">No products found for the given search criteria.</p>
-                </div>
-                {% endif %}
             </div>
+            {% endfor %}
+            {% else %}
+            <div class="col-12">
+                <p class="text-center">No products found for the given search criteria.</p>
+            </div>
+            {% endif %}
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
