@@ -42,6 +42,10 @@ def add_to_bag(request, item_id):
     else:
         bag[item_id]['items_by_quantity'] += quantity
 
+    # Reduce the inventory
+    product.inventory -= quantity
+    product.save()
+
     messages.success(request, f'Added {product.name} to your bag.')
 
     request.session['bag'] = bag

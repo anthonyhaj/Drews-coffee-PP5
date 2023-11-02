@@ -25,7 +25,7 @@
             <p class="mb-4">{{ product.description }}</p>
             <h3 class="mb-4">€{{ product.price }}</h3>
 
-            <p class="{% if product.inventory|inventory_status == 'Out of Stock!  ' %}
+            <p class="{% if product.inventory|inventory_status == 'Out of Stock!' %}
                 text-danger
                 {% else %}
                 text-success
