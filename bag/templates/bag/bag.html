@@ -29,6 +29,8 @@
                             <div style="flex: 2;">
                                 <strong>{{ item.product.name }}</strong><br>
                                 Size: {% if item.product.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}
+                                <br>
+                                In Stock: {{ item.product.inventory }} 
                             </div>
                             <div style="flex: 1;">
                                 {{ item.product.price }}
